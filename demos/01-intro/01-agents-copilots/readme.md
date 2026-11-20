@@ -1,0 +1,87 @@
+# Agents & Copilots for Microsoft 365
+
+This topic sets the vocabulary for the whole course. Before you build anything, you need a clear mental model of what a Copilot is, what an agent is, and how both fit into the Microsoft 365 platform you already use. By the end you can place any product you meet later (Copilot Chat, Copilot Studio, Cowork, SharePoint agents) on a single map and explain what job it does.
+
+---
+
+## Copilot, Agent, Assistant: One Vocabulary
+
+These words get used loosely, so this course fixes their meaning up front.
+
+| Term | What it is | Who drives |
+|---|---|---|
+| Copilot | An AI assistant embedded in an app or surface you already use, grounded in your work content | The human asks; Copilot responds turn by turn |
+| Agent | A Copilot given a specific job, its own knowledge, instructions, and tools it can call | The human sets a goal; the agent plans and acts across steps |
+| Assistant | The general category: any AI that helps a person complete work in natural language | Either, depending on capability |
+
+A useful way to hold it: every agent is a Copilot with a narrower job and more autonomy. Microsoft 365 Copilot is the broad assistant across your apps. An agent you build in Copilot Studio is a focused Copilot for one process, for example handling sales objections or answering HR policy questions.
+
+![Nested categories: assistant contains Copilot, and Copilot contains agent. Each step inward means a narrower job and more autonomy, from turn-by-turn answers to an agent that plans and acts toward a goal.](../pptx/images/01-01-vocabulary.svg)
+
+---
+
+## The Microsoft 365 Copilot Ecosystem
+
+Copilot is not one product, it is a layer that spans the platform. The pieces you will meet in this course sit at different levels, from the everyday chat experience up to the pro-code extensibility surface.
+
+![Three layers of the Copilot ecosystem: where people work (Copilot Chat, Copilot Cowork, in-app Copilot) and where makers build (Copilot Studio, SharePoint and Agent Builder agents) both stand on what grounds it (Microsoft Graph and tools, connectors and MCP servers).](../pptx/images/01-02-copilot-ecosystem.svg)
+
+The experiences layer is what end users touch. The build layer is where makers and developers assemble agents. Both stand on a shared foundation: Microsoft Graph, which grounds Copilot in your emails, files, chats, and meetings, and the tools and connectors that let agents reach beyond Graph into other systems.
+
+---
+
+## From Copilot to Cowork
+
+The step up from a Copilot to an agent is autonomy: instead of answering one turn, an agent takes a goal and works a sequence of steps to reach it. An agent is a Copilot given a goal, the tools to pursue it, and a loop to keep going until it is met.
+
+![Copilot Chat answers one question at a time while you do the planning. Cowork takes the outcome you describe, breaks the goal into tasks, acts across Outlook, Teams, Word, Excel, and PowerPoint, and hands the result back for your review.](../../08-cowork/pptx/images/01-01-cowork-and-chat.svg)
+
+Autopilot takes the next step. With Chat you ask, with Cowork you delegate, and with Autopilot you onboard a teammate: it has its own identity, starts work on a schedule or a signal, and keeps a process moving while you're away. It is a private preview, covered in the optional [AI Teammates](../../07-autopilot/readme.md) module.
+
+That shift, the parts behind it, and the design patterns teams use to structure it are the subject of the [next topic, How Agents Work](../02-how-agents-work/readme.md). Here it is enough to place agents on the map above; the mechanics come next.
+
+---
+
+## Start Without Code, Grow into Copilot Studio
+
+The same agent concept shows up in several places, each suited to a different builder and audience.
+
+| Surface | Best for | Who builds it |
+|---|---|---|
+| Copilot Chat | Everyday drafting, summarizing, and Q&A | Everyone, no build required |
+| Copilot Cowork | Recurring knowledge-work automation with skills | Business users, low-code |
+| Agent Builder / SharePoint agents | Site-grounded and prebuilt agents | Makers, no code |
+| Copilot Studio | Custom agents with topics, tools, and orchestration | Low-code makers, pro-code |
+
+You do not have to choose one path forever. A common pattern is to prototype in a no-code surface, then rebuild in Copilot Studio when the process needs custom tools, multi-agent orchestration, or governance.
+
+![A prototype in Agent Builder or a SharePoint agent is rebuilt in Copilot Studio when the process needs custom tools, multi-agent orchestration, or governance.](../pptx/images/01-04-start-without-code.svg)
+
+---
+
+## Practical Scenarios
+
+| Scenario | Copilot vs. Agent |
+|---|---|
+| "Summarize this thread" | Copilot Chat, one turn |
+| "Every Monday, compile my team's highlights and post them" | Agent (scheduled, multi-step) |
+| "Answer customer objections using our approved playbook" | Agent (grounded knowledge plus instructions) |
+| "Draft a reply using the latest numbers in this file" | Copilot Chat, grounded in Graph |
+
+The dividing line is scope and autonomy. When a task repeats, spans steps, or needs its own knowledge and tools, it is agent work.
+
+---
+
+## Where to Go Next
+
+1. [How Agents Work](../02-how-agents-work/readme.md): the agentic loop, the parts every agent is made of, and the patterns you will build with
+2. [Where to Build and What It Costs](../04-where-to-build/readme.md): how to choose where to build, and how it bills
+
+---
+
+## Links & Resources
+
+- [Microsoft 365 Copilot overview](https://learn.microsoft.com/microsoft-365/copilot/microsoft-365-copilot-overview)
+- [What are agents in Microsoft 365 Copilot](https://learn.microsoft.com/microsoft-365/copilot/extensibility/agents-overview)
+- [Microsoft 365 Copilot extensibility overview](https://learn.microsoft.com/microsoft-365/copilot/extensibility/)
+- [Microsoft Copilot Scenario Library](https://adoption.microsoft.com/en-us/scenario-library/)

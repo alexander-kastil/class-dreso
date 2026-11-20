@@ -1,0 +1,14 @@
+{
+    "mcpServers": {
+        "hr-mcp": {
+            "type": "streamable-http",
+            "url": "http://localhost:5010",
+            "note": "Local HR MCP Server running on port 5010"
+        },
+        "hr-mcp-azure-dev": {
+            "type": "streamable-http",
+            "url": "https://human-resource-mcp.azurewebsites.net",
+            "note": "Dev deployment hosted on Azure App Service (rg-cowork-copilot-studio)"
+        }
+    }
+}

@@ -1,0 +1,303 @@
+# Create an Autonomous Agent
+
+In this lab, you are going to understand how to create an autonomous agent using Microsoft Copilot Studio. The autonomous agent that you are going to create automatically processes candidate data from resume text files uploaded to SharePoint. The agent monitors a SharePoint document library for new resume uploads, extracts the candidate information using AI, and automatically creates employee records through the HR MCP server of this repository. This lab demonstrates how autonomous agents can streamline HR workflows by automating document processing and data entry tasks.
+
+![A candidate PDF uploaded to SharePoint fires a Power Automate trigger that prompts the Autonomous HR Docs Processor, which calls add_employee on the HR MCP server and SendEmail on the Email Management MCP Server.](../../../demos/04-cs-advanced/pptx/images/01-01-autonomous-triggers.svg)
+
+> **Note:** This lab uses the same server as [Give an Agent MCP Tools on the Hosted Server](../../03-cs-tools/06-mcp/lab-01-give-an-agent-mcp-tools.md), the HR MCP server in [`src/hr-mcp-server`](../../../src/hr-mcp-server). It is a .NET 10 application built on the MCP C# SDK that manages employees in a SQL database. Nothing new needs to be built here, you register the server as a tool, this time in an agent that runs without a user in the loop.
+
+In this lab you will learn:
+
+- How to create autonomous agents in Microsoft Copilot Studio
+- How to configure SharePoint document library triggers
+- How to process resume documents with AI to extract structured data
+- How to integrate autonomous agents with MCP servers
+
+## Exercise 1: Setting up the SharePoint Environment
+
+In this exercise you are going to prepare a SharePoint document library that will serve as the trigger point for your autonomous agent. The agent will monitor this library for new resume files containing candidate data and automatically process them.
+
+### Step 1: Creating the SharePoint Document Library
+
+Before creating the autonomous agent, you need to set up a SharePoint document library where HR personnel can upload candidate resume files.
+
+Navigate to your SharePoint site (you can use any SharePoint site of your Microsoft 365 tenant, or you can create a new one from scratch) and create a new document library:
+
+1. Go to **Site contents** and select **New** → **Document library**
+1. The page opens with a prompt to describe the library; scroll down to **Start from scratch or reuse** and select **Create blank document library**
+1. Name the library: `Candidate Data`
+1. Set the description: `Document library for candidate resume files`
+1. Select **Create** to create the library
+
+![The SharePoint interface showing the creation of a new document library called "Candidate Data" with the appropriate name and description filled in.](_images/sharepoint-library-01.png)
+
+Once created, configure the library permissions to ensure your autonomous agent can access it:
+
+1. Select **Settings** (gear icon) → **Library settings**, and in the side panel select **More library settings**
+1. Under **Permissions and Management**, select **Permissions for this document library**
+1. Ensure that the account you're using for Microsoft Copilot Studio has at least **Contribute** permissions
+
+### Step 2: Preparing Sample Resume Files
+
+For testing purposes, download [resumes.zip](https://download-directory.github.io/?url=https://github.com/alexander-kastil/copilot-studio-agents/tree/master/labs/05-cs-advanced/01-autonomous-agents/lab-01-create-an-autonomous-agent/resumes&filename=resumes) and unzip the folder. It holds each resume twice, as a PDF and as a text file (`.txt`); this lab uses the `.txt` files.
+The downloaded files describe hypothetical candidates including information such as:
+
+- Full name
+- Email address  
+- Current role/position
+- Skills and expertise
+- Spoken languages
+
+You can also write your own resume as a plain text file in any text editor. Use text files, not PDF or Word documents: the SharePoint tool that reads the file returns the text of a `.txt` file, but only encoded binary data for a PDF, which the agent cannot read.
+
+### Step 3: Ensuring Prerequisites
+
+Before proceeding, ensure you have the following:
+
+- **HR MCP server**: the instance deployed for this class
+- **SharePoint Access**: permissions to create and manage document libraries
+- **Power Platform Environment**: a Copilot Studio environment where you can create agents
+- **Sample Resume Files**: at least 2 or 3 resume text files with candidate data
+
+The server used in [Give an Agent MCP Tools on the Hosted Server](../../03-cs-tools/06-mcp/lab-01-give-an-agent-mcp-tools.md) is deployed for this class, so you run nothing on your machine. Use this URL when you register the MCP tool:
+
+```text
+https://lab-human-resource-mcp.azurewebsites.net
+```
+
+> The deployed server writes to a shared database, so everyone in the class sees the same employee list. Use resumes with distinct names to recognize your own records.
+
+## Exercise 2: Creating the Autonomous Agent
+
+In this exercise you are going to create the autonomous agent in Microsoft Copilot Studio that will monitor the SharePoint document library and process new resume uploads automatically.
+
+### Step 1: Creating the Autonomous Agent
+
+Open a browser and, using the work account of your target Microsoft 365 tenant, go to [https://copilotstudio.microsoft.com](https://copilotstudio.microsoft.com) to start using Microsoft Copilot Studio.
+
+Select the environment prepared for you, then select **Agents** → **More create options** → **Agent (Standard)**. The same menu also offers **Agent** with the **GitHub Copilot** badge and **Customer Assist Agent**; this lab uses the Standard agent.
+
+Configure your autonomous agent with the following settings. The **Name your agent** dialog asks only for the **Name**; set the **Description** afterwards on the **Overview** page with **Edit** in the **Details** section, and the **Instructions** with **Edit** in the **Instructions** section. Each one has its own **Save**.
+
+- **Name**: 
+
+```text
+Autonomous HR Docs Processor
+```
+
+- **Description**: 
+
+```text
+An autonomous AI agent that monitors SharePoint for new candidate resume uploads and automatically processes them to create employee records via the HR MCP server
+```
+
+- **Instructions**: 
+
+```text
+You are an autonomous HR assistant that specializes in processing candidate data from resume files. When a new resume file is uploaded to the SharePoint document library, you automatically:
+
+1. Read the content of the new file with the 'readSmallTextFile' tool of SharePoint and extract candidate information including first name, last name, email, skills, spoken languages, and current role
+2. Validate and structure the extracted data
+3. Create a new employee record using the 'add_employee' tool of the HR MCP server
+4. Provide confirmation of successful processing
+5. Send me an email with confirmation that the new employee record was created and with a recap of the candidate's data
+
+Always ensure data accuracy and provide clear feedback about the processing results. Handle errors gracefully and provide informative messages when processing fails.
+
+IMPORTANT: Do not wait for any user input. Work completely autonomously.
+
+DO NOT invent or assume fake data about candidates. AVOID hallucinations. You MUST ONLY process real and existing data.
+```
+
+Select **Publish** to publish your autonomous agent.
+
+### Step 2: Enhancing Agent Intelligence
+
+After creating the agent, you need to ensure that its capabilities are enhanced with generative AI reasoning and knowledge integration.
+
+In the **Knowledge** section of the agent, you can optionally add knowledge sources if you have specific HR documentation or candidate processing guidelines. For this lab, we'll rely on the agent's built-in AI capabilities and the MCP server integration.
+
+In the same **Knowledge** section, below **Add knowledge**, switch the **Web Search** toggle from **Enabled** to **Disabled**; it needs no **Save**. It is on by default, and with it the agent searches the public web for the candidate's name instead of working only from the uploaded file.
+
+In case of any configuration changes, select **Save** to confirm them.
+
+### Step 3: Adding the MCP Server Integration
+
+Your autonomous agent needs access to the HR MCP server tools to create employee records. Navigate to the **Tools** section and select **Add tool**.
+
+1. Choose **Model Context Protocol** group
+2. Search for `HR MCP`. If the **HR MCP Server** is in the list, for example because you registered it in [Give an Agent MCP Tools on the Hosted Server](../../03-cs-tools/06-mcp/lab-01-give-an-agent-mcp-tools.md), select it. Otherwise select the **Add new MCP** tile at the top of the **Add tool** dialog and fill in the **Add a Model Context Protocol server** form:
+
+| Field | Value |
+| --- | --- |
+| Server name | `HR MCP Server` |
+| Server description | `Allows managing the list of employees and their shifts for the HR department` |
+| Server URL | `https://lab-human-resource-mcp.azurewebsites.net` |
+| Authentication | None |
+
+3. Select **Create**. The server asks for no sign-in.
+4. Next to **Connection**, select **Create new connection**, then **Create**. **Add** stays disabled until the connection exists.
+5. Select **Add** to integrate the MCP server tools
+
+![The tools section showing the HR MCP Server being added to the autonomous agent with all the available employee management tools.](_images/autonomous-agent-02.png)
+
+This gives your autonomous agent access to all the tools that [`src/hr-mcp-server`](../../../src/hr-mcp-server) exposes:
+
+| Tool | What it does |
+| --- | --- |
+| `list_employees` | Returns the whole employee list |
+| `search_employees` | Searches by name, email, skills, or current role |
+| `add_employee` | Adds an employee with optional languages and skills |
+| `update_employee` | Updates an existing employee, matched by email |
+| `remove_employee` | Removes an employee by email |
+| `assign_shift` | Assigns an employee to an 8 hour shift by name, date, and position |
+
+The agent will primarily use the `add_employee` tool for processing new resume uploads. Note that you never declared this list anywhere: the agent called `tools/list` on the server and discovered it, which is why adding a tool in `Tools/HRTools.cs` makes it available to the autonomous agent without touching the agent at all.
+
+![The McpServerTool methods in Tools/HRTools.cs generate the six tools of the HR MCP Server, which an agent finds at runtime through tools/list, so a new method and a server restart add a capability. A custom connector, by contrast, needs its specification re-imported and the action re-added.](../../../demos/03-cs-tools/pptx/images/06-01-tool-discovery.svg)
+
+### Step 4: Adding the Mail MCP Server
+
+Your autonomous agent also needs access to the **Mail (Preview)** MCP server to be able to send e-mails; the older **Email Management MCP Server** is marked deprecated. Navigate to the **Tools** section and select **Add tool**.
+
+1. Choose **Model Context Protocol** group
+2. Find and select **Mail (Preview)**
+3. Next to **Connection**, select **Create new connection**, then **Create**, and pick your work account in the **Pick an account** window
+4. Select **Add** to integrate the MCP server tools
+
+This gives your autonomous agent access to a wide set of tools to manage the e-mails in the current user's mailbox.
+The agent will primarily use the `SendEmailWithAttachments` tool for sending notification e-mails.
+
+### Step 5: Adding the SharePoint MCP Server
+
+The trigger hands the agent only the properties of the new file, not its content, so the agent needs a tool to read the file. Add **SharePoint (Preview)** the same way: **Add tool**, **Model Context Protocol**, **SharePoint (Preview)**, **Create new connection**, **Create**, your account in **Pick an account**, then **Add**. The agent then reads the uploaded file itself. The SharePoint connector action **Get file content using path** is not enough, because it returns only a reference to the file.
+
+## Exercise 3: Configuring SharePoint Triggers
+
+In this exercise you will configure the autonomous agent to automatically trigger when new resume files are uploaded to the SharePoint document library.
+
+### Step 1: Adding the SharePoint Trigger
+
+In your autonomous agent, navigate to the 1️⃣ **Overview** section, scroll to the 2️⃣ **Triggers** panel and select 3️⃣ **+ Add trigger**.
+
+![The triggers section of the autonomous agent with the "+ Add trigger" command highlighted.](_images/autonomous-agent-03.png)
+
+From the **Add trigger** dialog, check **When a file is created (properties only)** from the SharePoint connector options. Then select **Next** to configure the trigger.
+
+![The trigger selection dialog showing SharePoint file triggers available for the autonomous agent, together with other out of the box triggers. The trigger "When a file is created (properties only)" is highlighted. There is a "Next" button in the lower right side of the dialog, to proceed with the configuration.](_images/autonomous-agent-04.png)
+
+The next step of the trigger's configuration is to give a name to the trigger and to configure/connect the permissions to access the target apps. In the current scenario the apps are:
+
+- Microsoft Copilot Studio
+- SharePoint
+
+Configure the trigger as follows:
+
+- **Trigger name**: replace the default `When a file is created (properties only)` with `When resume uploaded to Candidate Data library`
+
+![The SharePoint trigger configuration showing the name and the required apps permissions.](_images/autonomous-agent-05.png)
+
+Select **Next** and proceed to configure the trigger with the following additional settings:
+
+- **Site Address**: pick your target SharePoint site from the list, or enter its URL
+- **Library Name**: Select `Candidate Data` (the library you created)
+- **Folder**: Leave blank to monitor the entire library
+- **Limit columns by View (Optional)**: All Documents
+- **Additional instructions to the agent when it's invoked by this trigger**: the field already says `Use content from Body`; append ` and read the content of the uploaded text file.`
+
+![The SharePoint trigger configuration showing the site address, library name, folder, view, and additional instructions to the agent.](_images/autonomous-agent-06.png)
+
+Select **Create trigger** to add the SharePoint monitoring trigger to your agent. The process takes a while to complete. Once it is ready, you will see a dialog inviting you to test the trigger.
+
+If the dialog shows "That didn't work. The template definition is invalid.", select **Create trigger** again.
+
+![The dialog with trigger creation confirmation and a message inviting you to test the just created trigger.](_images/autonomous-agent-07.png)
+
+Select **Close** to return to the **Overview** section of your agent.
+
+### Step 2: Testing the Trigger
+
+In the list of **Triggers** there is now the new trigger and you can select the little flask near the ellipsis (**...**) to test it.
+
+![The trigger in the list of triggers with the little flask highligthed to start testing.](_images/autonomous-agent-08.png)
+
+Select the flask, a dialog window shows up waiting for a file to be uploaded in the target library in SharePoint Online.
+
+![The dialog to test the trigger with files uploaded to the target SharePoint Online library. There is a command to start testing that is greyed out, waiting for an actual file to be uploaded in the target library.](_images/trigger-test-01.png)
+
+Once at least one file will be uploaded in the target library, the dialog updates and allows you to select the **Start testing** command to test the autonomous agent. In case there are more than one files uploaded, you can select the one you want to use to test the trigger.
+
+You can simply upload in the target SharePoint Online library one of the resumes that you downloaded before and wait for the agent to process it.
+
+> **Note:** The trigger reacts only to files uploaded after it exists, so upload the test file now, not before. It can take up to one minute for the agent to get evidence of the new file(s) uploaded, and **Start testing** stays grey until then. The dialog does not update on its own: select its refresh icon to list the new file. The list of files shows timestamps, not file names; if it holds earlier uploads too, select the newest timestamp.
+
+> **Note:** If the test dialog never sees your file, open Power Automate and select **Connections**. When the SharePoint connection shows **Reconnect**, select **Reconnect**, then **Update**, and pick your account; the trigger flow shows no runs while that connection is broken.
+
+![The dialog to test the trigger with files uploaded to the target SharePoint Online library. The "Start testing" command is now enabled, because there is a new file to process.](_images/trigger-test-02.png)
+
+Once the test starts, the agent can interact with you through the **Test your agent** side panel. Because you created the connections when you added the tools, the agent goes straight to work. If the panel still shows an **Allow** card for the Mail MCP server, select **Allow**; if it shows **Open connection manager**, **Connect** the HR MCP Server, select **Submit**, then go back to the **Test your agent** panel and select **Retry**.
+
+You should be able to see a confirmation message that the candidate described in the resume that you uploaded got added as an employee on the HR MCP server.
+
+![The test panel of Copilot Studio while testing the trigger. There is the request to connect to the target HR MCP Server, as well as the confirmation that a new employee record was added.](_images/trigger-test-03.png)
+
+If you like, you can send a prompt to `List all the employees` to validate that the new record is now part of the list. You can also confirm it from outside Copilot Studio by running `list_employees` in MCP Inspector against the same server URL.
+Your autonomous agent is ready! You can now **Publish** it and it will start processing files autonomously!
+
+When you publish the agent, you might see a couple of warnings like in the following picture.
+
+![The publishing dialog showing a couple of warnings to the user. One is about editors having full access to embedded connections used by Flows or Triggers added to the agent. Another one is about triggers using author's credentials.](_images/autonomous-agent-09.png)
+
+1. **Full access for editors**: users with Editor permission will have access to embedded connections used by Flows or Triggers added to this agent.
+1. **Your agent includes triggers that use the author's credentials**: If the instructions in these triggers share data with other users, those users can use the original editor's credentials to access information or complete a task.
+
+Once you have published the agent, try to upload new resume text files and see what happens. If you go to the **Activity** section of the agent, after uploading one or more files to the target SharePoint Online library, you will see the `Automated` invocation of the agent.
+
+![The "Activity" of the agent. There is an autonomous agent invocation, because of the upload of a file in the target library.](_images/autonomous-agent-10.png)
+
+## Exercise 4: Inside the autonomous agents
+
+In this exercise you will understand how an autonomous agent works and what happens behind the scenes.
+
+### Step 1: Behind the scenes of the trigger
+
+After creating and testing the trigger, you might want to understand how an autonomous agent works. Select the ellipsis (**...**) next to your trigger and choose **Edit in Power Automate**.
+
+![The trigger management interface showing the option to edit the SharePoint trigger in Power Automate for advanced configuration.](_images/edit-trigger-01.png)
+
+In Power Automate, you'll see the flow that sits behind the scenes of the autonomous agent's trigger. 
+
+![The trigger flow in Power Automate. There is a trigger action of type "When a file is created (properties only)" and another action "Sends a prompt to the specified copilot for processing".](_images/edit-trigger-02.png)
+
+The flow is really trivial. There are simply a triggering action of type **When a file is created (properties only)** from the SharePoint connector and another action **Sends a prompt to the specified copilot for processing** to invoke the target agent. Practically speaking, a trigger of an autonomous agent is a Power Automate flow that sends a prompt to the agent. As such, almost any trigger for a Power Automate flow can become a trigger for a Copilot Studio autonomous agent.
+
+In case of need, you can customize the behavior of the flow to add additional behaviors or functionalities to the trigger before invoking the autonomous agent. However, if that is the case, you need to keep into account the insights that you can find in the next step.
+
+### Step 2: Handling multiple files uploads
+
+Another interesting thing to know about triggers of autonomous agents is that, when you upload multiple files to SharePoint, or in general when multiple triggering events happen you will not always see one Power Automate flow triggered for each file/event. Likewise, you will not see one agent instance for each file/event. In fact, for example when processing files uploaded to a SharePoint Online document library, there could be one flow instance processing multiple files uploaded in a single unit of time.
+The Power Automate flow will then trigger one agent instance, which will process one by one every single file.
+
+![Two resume PDFs uploaded at once start one flow run and one agent instance, which calls add_employee for the first file and then for the second.](_images/batched-uploads-one-agent-run.svg)
+
+You can clearly inspect the described behavior if you upload two (or more) files at once and then wait for the flow to run in Power Automate and for the autonomous agent to be invoked in Copilot Studio. In fact, there will be only one flow executed for a set of uploaded files and there will be one agent instance for that flow.
+
+You can validate this behavior selecting the **Activity** section of the autonomous agent and inspecting one `Automated` instance with more than one `Completed steps` like in the following screenshot.
+
+![The "Activity" section of the autonomous agent with an instance that has 2 "Completed steps".](_images/inspect-autonomous-agent-01.png)
+
+Selecting the instance you can see that the agent autonomously processed two (or more) files invoking the `add_employee` tool for each of them. There is no need to define complex logic in your agent. Just because in the agent's instructions we said
+
+```text
+... When a new resume file is uploaded to the SharePoint document library: ...
+```
+
+That's enough for the agent's autonomous intelligence to loop across all the uploaded files and apply the same logic to all of them. This is amazing and gives you the idea of how powerful AI is nowadays!
+
+![The details about the execution of an agent with two files processed, invoking the "add_employee" tool for each of them.".](_images/inspect-autonomous-agent-02.png)
+
+> **Tip:** To learn more about Autonomous Agents in Microsoft Copilot Studio, you can refer to [Agent Academy - Recruit - Mission 10: Add Event Triggers - Enable autonomous agent capabilities](https://microsoft.github.io/agent-academy/recruit/10-add-event-triggers/) and [Agent Academy - Operative - Mission 04: Add Event Triggers to act autonomously](https://microsoft.github.io/agent-academy/operative/04-automate-triggers/).
+
+
+
+You have completed the Autonomous Agents lab!

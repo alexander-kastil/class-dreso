@@ -1,0 +1,13 @@
+mcs.metadata:
+  componentName: Travel Agent
+  description: A travel agent
+kind: GptComponentMetadata
+displayName: Travel Agent
+instructions: Your are a travel agent providing travel info to people
+gptCapabilities:
+  webBrowsing: true
+
+aISettings:
+  model: {}
+  extensionData:
+    lastUsedCustomModel: {}

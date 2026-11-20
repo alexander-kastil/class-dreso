@@ -1,0 +1,45 @@
+grp=rg-cowork-copilot-studio
+loc=westeurope
+acct=storagecoworkcopilot
+container=food
+law=law-cowork-copilot
+appInsights=cs-ai-cowork-copilot
+sqlHost=server-2025.austriaeast.cloudapp.azure.com
+sqlUser=$SQL_USER
+sqlPwd=$SQL_PWD
+foodConStr="Server=$sqlHost;Database=FoodCatalogDB;User Id=$sqlUser;Password=$sqlPwd;TrustServerCertificate=true;"
+hrConStr="Server=$sqlHost;Database=HR-Data;User Id=$sqlUser;Password=$sqlPwd;TrustServerCertificate=true;"
+
+az group create -n $grp -l $loc
+
+az monitor log-analytics workspace create -g $grp -n $law -l $loc 
+lawId=$(az monitor log-analytics workspace show -g $grp -n $law --query id -o tsv)
+az monitor app-insights component create --app $appInsights -g $grp -l $loc --application-type web --workspace $lawId
+
+az storage account create -l $loc -n $acct -g $grp --sku Standard_LRS --allow-blob-public-access true
+key=$(az storage account keys list -n $acct -g $grp --query "[0].value" -o tsv)
+az storage container create -n $container --account-name $acct --account-key $key --public-access blob
+
+az storage blob upload-batch --destination $container --source assets/images --account-name $acct --account-key $key
+
+# Get Application Insights connection string
+aiConnStr=$(az monitor app-insights component show -g $grp -n $appInsights --query connectionString -o tsv)
+
+# Deploy food-catalog-api
+cd food-catalog-mcp
+az webapp up -n food-catalog-api -g $grp -p process-food-plan -l $loc --os-type Windows -r "dotnet:10" --sku F1
+az webapp config appsettings set -g $grp -n food-catalog-api --settings \
+  "ConnectionStrings__DefaultDatabase=$foodConStr"
+az webapp cors add --allowed-origins "*" -n food-catalog-api -g $grp
+cd ..
+
+# Deploy hr-mcp-server
+cd hr-mcp-server
+az webapp up -n human-resource-mcp -g $grp -p human-resource-plan -l $loc --os-type Windows -r "dotnet:10" --sku F1
+az webapp config appsettings set -g $grp -n human-resource-mcp --settings \
+  "APPLICATIONINSIGHTS_CONNECTION_STRING=$aiConnStr" \
+  "ConnectionStrings__EmployeeDatabase=$hrConStr" \
+  "Kestrel__Endpoints__Http__Url=http://*:8080" \
+  "WEBSITES_PORT=8080"
+az webapp cors add --allowed-origins "*" -n human-resource-mcp -g $grp
+cd ..

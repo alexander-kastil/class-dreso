@@ -1,0 +1,207 @@
+# Turn a Market Brief into a Repeatable Product Pitch
+
+![aw26-market-brief.docx and a named prompt run the product-pitch skill (SKILL.md plus pitch-deck-structure.pptx) into a claim table you approve, Step 5 tunes the skill through an Edit file? card, and an unnamed prompt for the AW26 trail-running capsule then saves Aurora Trail Capsule AW26.pptx with sourced market claims and placeholder commercial cards.](_images/01-product-pitch-skill-overview.svg)
+
+Author a custom `SKILL.md` that converts a research brief into a partner-ready pitch deck in your house structure, then run and tune it until every pitch is backed by evidence rather than adjectives.
+
+> **Reasoning effort:** Use **Medium** for Steps 1 to 4: mapping the brief to the pitch structure, authoring the skill and running it need real reasoning over evidence. Use **Light** for the description and wording tweaks in Step 5. High or Max is not needed; if a pitch card lacks evidence, fix the skill instructions rather than raising the effort.
+
+## Run Cost
+
+| Token type | Tokens | Opus 5.5 (run) | Sonnet 5.5 (estimate) | Haiku 5.5 (estimate) |
+| --- | --- | --- | --- | --- |
+| Input | 240 | €0.00 | €0.00 | €0.00 |
+| Cache write | 326K | €1.45 | €0.73 | €0.13 |
+| Cache read | 22.0M | €3.92 | €3.92 | €0.93 |
+| Output | 66K | €1.17 | €0.59 | €0.14 |
+| **Total** | **22.4M** | **€6.54** | **€5.23** | **€1.19** |
+
+## Related Topics
+
+This demo picks up where [Understanding Skills](../02-built-in-skills/readme.md) left off: the AW26 Market Brief that Deep Research produced there is the raw material the pitch is built from, so a research output becomes a sales input. It applies the `SKILL.md` anatomy and companion-file model introduced in [Creating Custom Skills](readme.md), this time with a PowerPoint template as the companion. When the skill is stable, [Extending Cowork with Plugins](../06-plugins/readme.md) shows how a skill like this gets packaged and shared with the rest of the commercial team.
+
+---
+
+Each step follows the same pattern:
+
+- Overview: what this step achieves
+- Research / Planning / Discussion: an open prompt to reason through the problem before acting
+- Finding: what to read and evaluate in the response before moving on
+- Recipe: a complete implementation prompt you can use as-is or adapt from your own findings
+- Expected Outcome: observable artefacts that confirm success
+
+As Regional Manager for Northern Europe at Aurora Outdoor, you now have the AW26 Market Brief and a season to sell. Every wholesale partner gets the same pitch structure, and every season you rebuild it by hand from whatever research is current. This demo captures that conversion once as a reusable skill, so Cowork turns any brief into a house-format pitch deck on demand.
+
+---
+
+## Demo Files
+
+All three sit in the `demo-01-product-pitch-skill` folder.
+
+| File | What it represents |
+|------|--------------------|
+| `aw26-market-brief.docx` | The finished market brief from the Deep Research demo: trends with sources, where Aurora stands, risks, and three prioritised moves |
+| `pitch-deck-structure.pptx` | Aurora's house pitch structure: seven cards with the heading and bracketed placeholders every partner pitch must follow |
+| `product-pitch/` | The finished skill folder from Step 3, ready to copy into OneDrive or zip and upload: `SKILL.md` plus its companion structure deck |
+
+## Load the demo files
+
+In Microsoft 365 Copilot Cowork, select **New task**, click **+** > **Upload images and files**, and attach both `aw26-market-brief.docx` and `pitch-deck-structure.pptx` from the `demo-01-product-pitch-skill` folder. Both show as chips above the composer. Send Steps 1 and 2 in this same task.
+
+---
+
+## Step 1: Find the pitch hiding in the brief
+
+**Overview:** A market brief is written to inform a decision, not to sell anything. Before you can automate the conversion, you have to see what a pitch actually takes from a brief and what it has to leave behind. Aurora's brief closes with three prioritised moves, and only some of them carry a story a partner would want to hear.
+
+**Research / Planning / Discussion:**
+
+With both files attached, send this prompt:
+
+```
+Read aw26-market-brief.docx. It ends with three prioritised moves for AW26. For each move, tell me whether it could be pitched to a wholesale partner or whether it is purely internal work, and say why. Then tell me which parts of the brief are evidence a partner would find convincing, and which parts we would never put in front of them.
+```
+
+**Finding:** A strong answer ranks the moves by pitchability: the repair programme is framed in the brief as a partner-facing service and can be pitched now, the trail-running capsule becomes a sell-in story once the product exists, and publishing sustainability metrics is internal verification work whose published data, not the work itself, belongs in a pitch. It should also name what stays confidential, such as the leadership-only marking on the header, our own admitted gaps, the whole risk section with its thin-wholesale-base warning, and the buyer interviews, and what travels well, such as the cited market trends and the free two-year repair offer with its spare-parts programme. Expect it to flag that the 11 percent growth figure is an estimate with no named source. If it just summarises the brief section by section, ask it which single move a partner would give shelf space to and why.
+
+**Expected Outcome:** A verdict for each of the three moves (pitch now, pitch later, or internal), plus a split between the evidence that can face a partner and the analysis that stays internal.
+
+---
+
+## Step 2: Map the house structure to its evidence
+
+**Overview:** Aurora's pitch structure is fixed, so the real work of any pitch is deciding which evidence fills which card. Have Cowork do that mapping once, explicitly, against the structure you already use. This mapping becomes the body of the skill you write in the next step.
+
+**Research / Planning / Discussion:**
+
+With both files attached, send this prompt:
+
+```
+Now open pitch-deck-structure.pptx. This is our house pitch structure for wholesale partners. For each of the seven cards, tell me which specific content from aw26-market-brief.docx would fill it, and name the source or number you would cite. Flag any card the brief cannot fill on its own and say what else you would need.
+```
+
+**Finding:** Look for a card-by-card mapping that reaches for specific evidence rather than themes: the trend section feeding The shift with its named sources (Circana, European Outdoor Group), the segment-growth figure sizing The gap with a warning that the brief names no source for it, the repair programme and its pillar filling Why Aurora. It should flag the cards a market brief genuinely cannot answer, normally The product, The offer, and Next step, since pricing, assortment, terms, and the partner ask are commercial decisions no research document holds. If every card comes back confidently filled, push back and ask which card it is inventing content for.
+
+![Diagram mapping aw26-market-brief.docx to the seven pitch cards: trends fill The shift, the segment-growth figure fills The gap, the repair programme fills Why Aurora, The product and The offer wait for your input, and the admitted gaps stay internal.](_images/pitch-evidence-map.svg)
+
+**Recipe:**
+
+Then send:
+
+```
+Write me a short mapping table with one row per card: card number, card name, what fills it, and where that content comes from. Mark any card that needs input from me rather than from the brief.
+```
+
+**Expected Outcome:** A seven-row mapping table tying each card to named evidence, with a column that marks every card needing your input; only The shift comes back complete from the brief alone.
+
+---
+
+## Step 3: Author the Product Pitch skill
+
+**Overview:** Now capture the mapping as a reusable custom skill. A `SKILL.md` file lets Cowork run this conversion by name against any brief, not just this one, and a companion file lets it carry the house structure with it. You author it once in your OneDrive skills folder and place the structure deck beside it.
+
+![Diagram of the product-pitch and meeting-prep skill folders, each with a SKILL.md that names its companion file, pitch-deck-structure.pptx or meeting-brief-template.docx, which Cowork reads whenever the skill runs.](_images/companion-files.svg)
+
+**Recipe:**
+
+Create a `SKILL.md` file in your OneDrive at `Documents/Cowork/Skills/product-pitch/SKILL.md`, place a copy of `pitch-deck-structure.pptx` in the same folder, and paste this as the file contents:
+
+To skip the typing, copy the whole `product-pitch` folder from `demo-01-product-pitch-skill` into `Documents/Cowork/Skills/` instead: it already holds the `SKILL.md` below and its companion deck. Or zip the contents of that folder, with `SKILL.md` at the root of the archive, open **Customize**, click **Add** > **Upload**, and choose the zip in the **Upload a skill or plugin** dialog, which takes .MD, .ZIP, or .SKILL files. The dialog closes as soon as the file is picked, product-pitch appears under **Added**, and Cowork stores it in OneDrive under **Documents** > **Cowork** > **Skills** > **product-pitch** with the deck beside `SKILL.md`. Author it by hand at least once, though, since the wording is what you tune in Step 5.
+
+```text
+---
+name: product-pitch
+description: Turns a market brief, research report, or product document into a wholesale partner pitch deck in Aurora Outdoor house structure, with every claim traced back to a named source. Use whenever I say build a pitch, pitch this to partners, turn this brief into a deck, or name a range or season to pitch.
+---
+
+Produce a seven-card partner pitch deck in the house structure defined by pitch-deck-structure.pptx, which sits in this skill folder.
+
+Identify the source document I am pitching from and read it in full before writing any card. Identify the product, range, or move being pitched from my request. If my request does not name one, ask me before continuing.
+
+Fill the seven cards in order:
+- Title and promise: the range name and one sentence on what it gives the partner, phrased as their gain rather than our feature.
+- The shift: the market movement that makes this range necessary, with two supporting facts and the source named for each.
+- The gap: what the partner's current assortment cannot answer, which customer leaves without buying, and the size of the gap as a number.
+- The product: what the range is, the three things it does that the incumbent range does not, and its price band.
+- Why Aurora: the proof we can substantiate with a figure, the differentiator a competitor cannot copy this season, and which messaging pillar the range carries.
+- The offer: order tiers, partner-facing services included, and marketing support.
+- Next step: the one action asked of the partner, the date, and the owner on each side.
+
+Every factual claim on The shift, The gap, and Why Aurora must trace to the source document. Name the source in the card. If the source does not support a claim, leave the claim out rather than softening it.
+
+Never invent pricing, order tiers, assortment, or terms. The product and The offer cards depend on commercial decisions, so ask me for that input and leave the cards as placeholders until I supply it.
+
+Keep every card to three short bullets or fewer. Save the finished deck as a PowerPoint file titled with the range name and the season.
+```
+
+**Finding:** Cowork discovers custom skills at the start of each conversation, so start a new task after saving, type `/` in the composer, open the **Skills** tab, and confirm `/product-pitch` is listed under **Custom skills**. The `name` is kebab-case and matches its folder exactly, which is what the Agent Skills format requires; a mismatch between folder and name is the most common reason a skill fails to load. The `description` is the only part Cowork reads when deciding whether the skill applies, so check that yours names the trigger phrases you would actually type. If Cowork returns a **Skill Report** for the skill, start with its lowest-scoring dimension.
+
+**Expected Outcome:** A `SKILL.md` saved at `Documents/Cowork/Skills/product-pitch/` with the structure deck beside it as a companion file, shown under **Added** on the **Customize** page and listed as `/product-pitch` under **Custom skills** in a new task.
+
+---
+
+## Step 4: Run the skill and pressure-test the result
+
+**Overview:** A pitch skill that produces confident slides is worse than no skill at all if the confidence is unearned. Run it against the AW26 brief, then hold every claim on the deck up against the source and see what does not survive.
+
+**Recipe:**
+
+Select **New task**, click **+** > **Upload images and files**, attach `aw26-market-brief.docx` from the `demo-01-product-pitch-skill` folder, and send:
+
+```
+Run my Product Pitch skill against aw26-market-brief.docx. The pitch is for the AW26 trail-running capsule going to our wholesale partners. Build the seven-card deck and show it to me before you save anything.
+```
+
+**Research / Planning / Discussion:**
+
+When the deck comes back, send:
+
+```
+Go through every factual claim on The shift, The gap, and Why Aurora. For each one, quote the line in aw26-market-brief.docx that supports it. Show me any claim you cannot support that way, and tell me whether you carried over anything from the brief that should have stayed internal.
+```
+
+**Finding:** The deck comes back in the chat with nothing saved, and the **Workspace** panel lists product-pitch under **Plugins**, which confirms the skill ran. The product, The offer, and Next step should come back as bracketed placeholders rather than invented price bands. In the claim check, watch for two specific failures: a claim that sounds sourced but traces to nothing (a typical first run stretches the 11 percent figure from Aurora's target age band to the whole segment, or cites the leadership-only brief itself as the source), and confidential material from the brief's risk section leaking onto a partner-facing card. If the skill happily filled in pricing, note it as the instruction to sharpen next.
+
+**Expected Outcome:** A seven-card deck where the market claims each cite the brief and the commercial cards await your input, plus a claim-by-claim table that marks each claim supported, overstated, or unsupported and names anything internal that leaked.
+
+---
+
+## Step 5: Tune the skill for discovery and evidence discipline
+
+**Overview:** The skill works, but the first run always exposes both a discovery gap and a quality gap. Refine the description so Cowork reaches for Product Pitch without being told, and tighten the instruction behind whichever card failed your check.
+
+![Diagram of the run-and-tune loop: start a new task, run the skill, check the result against the template and the source, ask what misses, and fold the fixes in, repeating until the skill fires without being named.](../pptx/images/03-03-run-and-tune.svg)
+
+**Research / Planning / Discussion:**
+
+In the same task, send:
+
+```
+Look at my Product Pitch skill description and instructions. Which pitch requests phrased the way I actually talk would fail to trigger it? And which instruction let through the weak claims we just found? Suggest a tighter description and the specific instruction changes that would fix both.
+```
+
+**Finding:** A good answer points to natural phrasings the description misses, such as a sell-in deck for your accounts, a range presentation for stockists, or line review slides for buyers, and it ties each weak claim back to the instruction that permitted it. Usually the fix is to define what counts as support, cite the outside source rather than the brief, allow a bracketed placeholder when the brief has nothing, name the confidential sections that must never travel onto a card, and show a claim table before saving. Cowork ends by offering to make these changes to the skill for you.
+
+**Recipe:**
+
+Accept the offer so Cowork folds the fixes into the `SKILL.md`:
+
+```text
+Yes, make these changes to my Product Pitch skill.
+```
+
+Cowork hands the edit to its skills agent and holds an **Edit file?** card for `SKILL.md` (Medium risk, Replace text); approve it with **Approve once** from the arrow beside **Always allow Edit artifact**. It then reports a quality score out of 100, where 70 counts as ready to share, and names the missing sections that hold the score down, such as when not to use the skill or an explicit output format. The **Customize** page can keep showing the old text for a while, but a new task started a few minutes later already uses the edited skill. Select **New task**, attach `aw26-market-brief.docx` through **+** > **Upload images and files**, and confirm the skill triggers without being named:
+
+```
+I need a partner deck for the AW26 trail-running capsule off the back of this brief. Build it in our usual structure.
+```
+
+When the claim table comes back, approve it so the skill builds the deck:
+
+```text
+Approved. Build the deck now and keep placeholders for anything I have not supplied.
+```
+
+**Expected Outcome:** The task shows **Reviewed custom skill Product pitch** although you never named it, then returns a claim table that quotes the supporting sentence and names the outside source for every claim, with the brief's name and internal analysis kept off the cards and the commercial cards left as placeholders. After your approval, Cowork saves the seven-card deck as a PowerPoint file named after the range and season, such as `Aurora Trail Capsule AW26.pptx`, in the **Output** folder of the **Workspace** panel.
+
+> The skill folder can hold up to 20 companion files. Adding last season's winning pitch beside the structure deck gives Cowork a worked example to match, not just a shape to fill. See [Creating Custom Skills](readme.md).

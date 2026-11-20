@@ -1,0 +1,43 @@
+.mainDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.entryImg {
+  width: 250px;
+}
+
+mat-card-title {
+  text-align: center;
+  width: 400px;
+}
+
+mat-card-subtitle {
+  text-align: center;
+}
+
+mat-card-content {
+  height: 550px;
+  background-color: var(--color-surface-muted);
+}
+
+mat-card-footer {
+  margin-top: 1rem;
+}
+
+mat-card {
+  margin-bottom: 0.5rem;
+  width: 50%;
+}
+
+mat-card-footer {
+  min-height: 3.5rem;
+  vertical-align: middle;
+}
+
+.webfont{
+  font-family: 'MuseoModerno', cursive;
+  font-size: 2rem;
+}

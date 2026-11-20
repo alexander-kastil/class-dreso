@@ -1,0 +1,62 @@
+{
+  "runDate": "2026-11-01",
+  "measuredAt": "2026-11-01T22:07:00Z",
+  "model": {
+    "name": "Sonnet 5.5",
+    "effortLevel": "Light",
+    "note": "Every Cowork task in the three labs finished at this setting; Medium was never needed. GPT 5.6 Terra is not offered in the model picker."
+  },
+  "billing": {
+    "spendingPolicy": "All Users Policy",
+    "billingMethod": "Pay-as-you-go",
+    "policyLimitCredits": 8000
+  },
+  "sources": [
+    {
+      "id": "usage-details",
+      "where": "Cowork task > More actions > Usage details",
+      "shown": "Cowork usage limit 100% remaining; Limits reset on December 1; Credits spent over time: No credit usage in this period; Credit totals may be delayed while recent activity is processed"
+    },
+    {
+      "id": "admin-cost-management",
+      "where": "Microsoft 365 admin center > Copilot > Cost management > Overview, month to date (1 Nov 2026)",
+      "shown": "Total Copilot Credits used 0; Prepaid capacity pack credits used 0; Pay-as-you-go credits used 0; Active users 0; No credits spent yet this month"
+    }
+  ],
+  "status": "not yet available",
+  "statusNote": "Cowork shows no credit figure per task, and both usage views still reported zero right after the runs because of the reporting delay. Re-read both sources a day later to fill the credit figures.",
+  "labs": [
+    {
+      "lab": "labs/02-cowork/lab-01-cowork-setup.md",
+      "exercisesRun": ["Exercise 1", "Exercise 2 Steps 1 and 2", "Exercise 3", "Exercise 4"],
+      "tasks": [
+        { "name": "Weekly Team Status Update Email Draft", "credits": null, "creditsSource": "not yet available" },
+        { "name": "Schedule Project Sync and Teams Confirmation", "credits": null, "creditsSource": "not yet available" }
+      ],
+      "creditsTotal": null
+    },
+    {
+      "lab": "labs/02-cowork/lab-02-cowork-skills.md",
+      "exercisesRun": ["Exercise 2", "Exercise 3", "Exercise 4"],
+      "tasks": [
+        { "name": "Create a Personal Skill in OneDrive", "credits": null, "creditsSource": "not yet available" },
+        { "name": "Flash Cards for Grey Logistics", "credits": null, "creditsSource": "not yet available" },
+        { "name": "Monday Status Email Draft", "credits": null, "creditsSource": "not yet available" },
+        { "name": "Weekly status mail, stopped task 1 of 2", "credits": null, "creditsSource": "not yet available" },
+        { "name": "Weekly status mail, stopped task 2 of 2", "credits": null, "creditsSource": "not yet available" }
+      ],
+      "creditsTotal": null
+    },
+    {
+      "lab": "labs/02-cowork/lab-04-cowork-plugins.md",
+      "exercisesRun": ["Exercise 1", "Exercise 2", "Exercise 3", "Exercise 4", "Exercise 6"],
+      "exercisesNotRun": ["Exercise 5 (optional, needs GitHub Copilot in VS Code)", "Exercise 7 (ran on 2026-10-21)"],
+      "tasks": [
+        { "name": "Research prompt with lab-foundry-research", "credits": null, "creditsSource": "not yet available" },
+        { "name": "Grey Logistics MCP Presentation", "credits": null, "creditsSource": "not yet available" },
+        { "name": "One-pager with lab-grey-logistics-document", "credits": null, "creditsSource": "not yet available" }
+      ],
+      "creditsTotal": null
+    }
+  ]
+}

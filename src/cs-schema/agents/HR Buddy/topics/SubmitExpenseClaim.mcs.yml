@@ -1,0 +1,141 @@
+mcs.metadata:
+  componentName: Submit Expense Claim
+  description: SubmitExpenseClaim
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    triggerQueries:
+      - submit expense claim
+      - file an expense report
+      - claim expenses
+      - expense reimbursement
+      - report a business expense
+      - turn in receipts for expenses
+      - how do I submit an expense?
+      - start an expense claim
+      - reimburse my expenses
+      - log a new expense
+
+  actions:
+    - kind: AdaptiveCardPrompt
+      id: HwUyv5
+      card: |-
+        {
+          "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+          "type": "AdaptiveCard",
+          "version": "1.5",
+          "body": [
+            {
+              "type": "TextBlock",
+              "text": "Submit Travel Expenses",
+              "weight": "Bolder",
+              "size": "Large"
+            },
+            {
+              "type": "TextBlock",
+              "text": "Start Date"
+            },
+            {
+              "type": "Input.Date",
+              "id": "startDate"
+            },
+            {
+              "type": "TextBlock",
+              "text": "End Date",
+              "spacing": "Medium"
+            },
+            {
+              "type": "Input.Date",
+              "id": "endDate"
+            },
+            {
+              "type": "TextBlock",
+              "text": "Destination",
+              "spacing": "Medium"
+            },
+            {
+              "type": "Input.Text",
+              "id": "destination",
+              "placeholder": "Enter destination"
+            },
+            {
+              "type": "TextBlock",
+              "text": "Amount",
+              "spacing": "Medium"
+            },
+            {
+              "type": "Input.Number",
+              "id": "amount",
+              "placeholder": "Enter amount"
+            },
+            {
+              "type": "TextBlock",
+              "text": "Number of Children",
+              "spacing": "Medium"
+            },
+            {
+              "type": "Input.Number",
+              "id": "numberOfChildren",
+              "placeholder": "Enter number of children",
+              "min": 0
+            },
+            {
+              "type": "TextBlock",
+              "text": "Comment (Optional)",
+              "spacing": "Medium"
+            },
+            {
+              "type": "Input.Text",
+              "id": "comment",
+              "isMultiline": true,
+              "placeholder": "Add a comment (optional)"
+            }
+          ],
+          "actions": [
+            {
+              "type": "Action.Submit",
+              "title": "Submit",
+              "data": {
+                "action": "submitTravelExpense"
+              }
+            }
+          ]
+        }
+      output:
+        binding:
+          action: Topic.action
+          actionSubmitId: Topic.actionSubmitId
+          amount: Topic.amount
+          comment: Topic.comment
+          destination: Topic.destination
+          endDate: Topic.endDate
+          numberOfChildren: Topic.numberOfChildren
+          startDate: Topic.startDate
+
+      outputType:
+        properties:
+          action: String
+          actionSubmitId: String
+          amount: Number
+          comment: String
+          destination: String
+          endDate: Date
+          numberOfChildren: Number
+          startDate: Date
+
+    - kind: ConditionGroup
+      id: conditionGroup_Wtoj2e
+      conditions:
+        - id: conditionItem_ZAGLeP
+          condition: =Topic.amount <= 100
+          actions:
+            - kind: SendActivity
+              id: sendActivity_C83gjt
+              activity: Your expense claim was submitted for processing
+
+      elseActions:
+        - kind: SendActivity
+          id: sendActivity_m7bSuj
+          activity: Your expense claim was submitted for approval
