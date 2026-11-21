@@ -11,7 +11,7 @@ Built-in skills handle common office tasks and [custom skills](../03-custom-skil
 - **Specialized expertise**: skills for financial analysis, legal research, clinical or HR domain knowledge
 - **External data connectors**: MCP servers that reach CRM data, ticketing systems and third-party APIs; each user completes a one-time **Connect** sign-in
 - **Interactive widgets**: MCP apps return a UI that renders in the conversation
-- **Microsoft and role-based plugins**: Dynamics 365 Customer Service, Sales and ERP, Fabric IQ and Business Applications in Work IQ, plus role-based plugins for Legal, Sales, Service and Education
+- **Microsoft and role-based plugins**: Dynamics 365 Customer Service, Sales and ERP, Fabric IQ and Business Applications in Work IQ, plus role-based plugins for Legal, Finance (13 skills), Sales, Service and Education; Planner joined in November 2026, Accounting is a Frontier plugin, and the Power Platform Admin plugin is a read-only preview
 - **Admin deployment**: IT admins can roll out plugins organization-wide; they appear with **Managed by your organization**
 
 ![A plugin adds expertise skills to the Cowork side panel and MCP connectors that reach CRM data, ticketing systems and third-party APIs beyond Microsoft 365. An MCP app returns an interactive widget into the conversation.](../pptx/images/06-01-what-plugins-add.svg)

@@ -26,7 +26,9 @@ When you select **Add knowledge**, the dialog offers the following source types.
 | Real-time connectors | Live systems such as Dynamics 365, Salesforce, ServiceNow, and Azure SQL | Depends on the connection you configure |
 | Unstructured data | Individual SharePoint or OneDrive files and folders, and connector content | The signed-in user's permissions |
 
-The permission column is the one makers underestimate. SharePoint, Dataverse, and Copilot connector sources use the agent user's Microsoft Entra ID authentication, so two people asking the same question can get different answers. An uploaded file has no such filter: once it is in the agent, every user of the agent can be answered from it.
+The permission column is the one makers underestimate. SharePoint, Dataverse, and Copilot connector sources use the signed-in user's Microsoft Entra ID authentication, so two people asking the same question can get different answers. An uploaded file has no such filter: once it is in the agent, every user of the agent can be answered from it.
+
+The same rule makes oversharing visible. A SharePoint library shared with everyone answers everyone, so check who can open a source before the agent reaches a wider audience, and give each source a named data owner who reviews its access on a schedule.
 
 ![Two overlapping circles: the content you choose for the agent and what the person asking already has permission to see. The agent's answers come only from the overlap.](../../01-intro/pptx/images/04-01-productivity-agents.svg)
 

@@ -190,6 +190,10 @@ Start a new Claude Code session after you change the file.
 
 Once an agent is a set of files, every change can be diffed, reviewed in a pull request and replayed, which is the source control story of [topic 3](../03-alm-source-control/readme.md) applied to authoring. The portal stays the place to publish and to make complex visual edits. For the bulk of authoring, testing and review, a coding agent that knows the schema, follows proven patterns and validates its own output is the faster route.
 
+## A CLI for Copilot Managed Runtime agents
+
+The plugins in this topic work on Copilot Studio agents through the Power Platform CLI. Agents built for Copilot Managed Runtime get their own command line, `msagent` (preview), which creates, deploys and manages them, including named dev, test and prod deployments; see [Deploy an agent with the CLI](https://learn.microsoft.com/microsoft-365/copilot-managed-runtime/developer/agents/cli/deploy) and [Deployments for Copilot Managed Runtime agents](../03-alm-source-control/readme.md#deployments-for-copilot-managed-runtime-agents).
+
 ## Hands-On Demo
 
 - [Build and migrate an agent from the terminal](demo-build-and-migrate-from-the-terminal.md)

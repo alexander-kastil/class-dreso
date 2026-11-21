@@ -20,7 +20,7 @@ Think of Copilot Chat as your AI thought partner. Think of Cowork as your AI col
 
 ![Two lanes: in Copilot Chat you ask one question at a time and merge the text yourself; in Cowork you describe the outcome, Cowork plans and acts across Outlook, Teams, Word, Excel and PowerPoint, and you review the documents and sent messages.](../pptx/images/01-01-cowork-and-chat.svg)
 
-Microsoft announced a new Copilot Home on September 25, 2026, where Chat and Cowork come together in one starting point. Copilot routes each request to Chat, Cowork, or Code, so you don't have to pick a mode. Home and Code roll out through the Frontier program first. Autopilot (previously Scout) is a separate cloud-hosted digital teammate with its own identity, in private preview, and it is not part of Cowork.
+Microsoft announced a new Copilot Home on September 25, 2026, where Chat and Cowork come together in one starting point. You pick the mode with the **Chat** | **Cowork** | **Code** toggle; Copilot's router chooses the model for a request, and the mode stays your choice. Home and Code roll out through the Frontier program first. Autopilot (previously Scout) is a separate cloud-hosted digital teammate with its own identity, in private preview, and it is not part of Cowork.
 
 ---
 
@@ -120,13 +120,13 @@ For admins, the switch is the **Enhanced personalization** control. It is on by 
 | **Opus 5.5** | For complex, high stakes work. |
 | **Sonnet 5.5** | Efficient for everyday tasks. |
 
-**Auto** is the default, and it suits most work. Cowork picks the model for each task from the models your organization makes available, so you rarely need to change the model. The list changes as Microsoft ships models and as your admin turns families on or off: the table shows the picker of the class tenant on 22 October 2026, and Claude Fable 5 (Preview) appears only after an admin turns it on. A model badge in the conversation shows which model produced each response.
+**Auto** is the default, and it suits most work. Cowork picks one model from the first message of a task and keeps it for the whole task, choosing from the models your organization makes available, so you rarely need to change the model; scheduled tasks run on the default model. Opus 5.5 has offered a **Fast** option since November 2026. The list changes as Microsoft ships models and as your admin turns families on or off: the table shows the picker of the class tenant on 22 October 2026, and Claude Fable 5 (Preview) appears only after an admin turns it on. A model badge in the conversation shows which model produced each response.
 
 Reasoning effort sets how hard Cowork works on a task. One button next to the send arrow holds both choices and reads, for example, **Auto Medium**: it opens an **Effort** slider with five stops from **Faster** to **Smarter** (**Light**, **Medium**, **High**, **Extra High**, and **Max**) and a row that opens the model list. Higher effort is more thorough but slower, and it uses more credits. The picker keeps your last choice on that device, so check it before each task; each Hands-On Demo states the effort it needs, and none of them needs High or Max.
 
-Cowork shows no credit figure per task. In a task, **...** > **Usage details** shows your Cowork usage limit as a bar with the share left, the date the limit resets, and the credits spent over time, all for your whole account, and recent activity can take a while to appear. Admins see consumption per service and per user under **Copilot** > **Cost management** > **Consumption** in the Microsoft 365 admin center.
+Type `/cost` in a task to see an approximate credit figure for that session. The figure is an estimate for your own planning, the bill comes from Cost management, and no check runs before a task starts. In a task, **...** > **Usage details** shows your Cowork usage limit as a bar with the share left, the date the limit resets, and the credits spent over time, all for your whole account, and recent activity can take a while to appear. Admins see consumption per service and per user under **Copilot** > **Cost management** > **Consumption** in the Microsoft 365 admin center.
 
-Admins can turn off the Anthropic model family or build model profiles and assign them to spending policies; see [Human-in-the-Loop](../07-staying-in-control/readme.md).
+Admins can turn off the Anthropic model family or build model templates and assign them to spending policies; see [Human-in-the-Loop](../07-staying-in-control/readme.md).
 
 ---
 
@@ -222,3 +222,4 @@ Put this interaction model to work end to end on the Aurora Outdoor scenario:
 - [Anthropic as a Subprocessor](https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor)
 - [Copilot Camp: Cowork Setup Lab](https://microsoft.github.io/copilot-camp/pages/copilot-cowork/00-cowork-setup/)
 - [Frontier Program](https://adoption.microsoft.com/en-us/copilot/frontier-program/)
+- [Copilot Credits Cost in Usage-Based Billing](https://learn.microsoft.com/copilot/implement/usage-based-billing-copilot-credits-cost)

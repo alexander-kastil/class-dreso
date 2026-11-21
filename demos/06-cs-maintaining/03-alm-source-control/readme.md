@@ -15,6 +15,14 @@ Application Lifecycle Management (ALM) is the discipline of moving an agent thro
 
 Without ALM, promoting an agent means rebuilding it by hand and hoping nothing drifts between environments. Solutions plus environment variables let the same agent carry different settings in dev, test, and production without editing the agent itself. Pipelines and source control turn that from a careful manual ritual into an automated, auditable release.
 
+## Deployments for Copilot Managed Runtime agents
+
+Agents built for Copilot Managed Runtime have a lifecycle tool of their own, the `msagent` CLI (preview, from the `Microsoft.Agents.Hosting.Cli` package). `msagent deployment create` defines named deployments of type dev, test or prod, and the CLI keeps them in `.config/agent.config.json`. Learn tells you to keep that file out of Git; see [Deploy an agent with the CLI](https://learn.microsoft.com/microsoft-365/copilot-managed-runtime/developer/agents/cli/deploy).
+
+```bash
+msagent deployment create
+```
+
 ## Links & Resources
 
 - [Establish an ALM strategy for Copilot Studio](https://learn.microsoft.com/microsoft-copilot-studio/guidance/alm)

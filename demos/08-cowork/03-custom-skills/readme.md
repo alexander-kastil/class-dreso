@@ -48,6 +48,8 @@ Each uploaded file needs `name` and `description` frontmatter. If a skill with t
 
 To share a skill, open its detail page, select **Share**, and choose **Only you** or **Specific users in your organization**, then select **Apply**. After you edit a shared skill, select **Re-share** to send the latest version. Custom skills are not available in Cowork on mobile.
 
+Skills also run in Copilot Chat, generally available with Microsoft Copilot (Premium) and unavailable to users under Information Barriers. A plugin is published once to a shared registry and serves both Chat and Cowork; see [Build skills for Copilot Chat](https://learn.microsoft.com/plugins/build-copilot-chat-skills).
+
 Because a skill is a Markdown file in OneDrive, you can review it there with colleagues before you share it. OneDrive and SharePoint open Markdown files natively, custom skill files included, with rich-text editing on top of the `.md` file, anchored comments, live presence, and real-time coauthoring.
 
 Cowork is also no longer the only Copilot that keeps skills as Markdown. Copilot in OneDrive saves a process you repeat as a personal skill in a Markdown file (announced in October 2026), and Copilot in SharePoint adds site skills: `SKILL.md` files in the site's **Agent Assets** library that members with **Edit** permission create and members with **View** permission run. Learn does not say that Cowork loads these skills, so treat each product's skills as its own set that shares the Markdown approach.

@@ -72,6 +72,12 @@ Once a team has a working set of tools, rebuilding them in every agent wastes ti
 
 Adding components to a collection moves them out of the agent, and the agent then references them in the collection. Other authors can use the collection but cannot change the components inside it, and only the creator or a user with the system customizer or system admin role can edit it. Setting a primary agent restricts a collection to one agent. Exporting a collection produces a managed solution you can import into another environment; collections with connectors or environment variables travel better inside a solution you create yourself.
 
+## Copilot connectors: synced or federated
+
+Power Platform connectors give an agent actions. Copilot connectors bring business content into Microsoft 365 so Copilot and agents can answer from it, and they come in two kinds.
+
+A synced connector indexes the content into Microsoft Graph ahead of time, so answers are fast and searchable across systems. A federated connector queries the source live over MCP when someone asks, so answers are current and the content never leaves the system; federated connectors are an early access preview for Frontier and Targeted release tenants. See [Microsoft 365 Copilot connectors overview](https://learn.microsoft.com/microsoft-365/copilot/connectors/overview).
+
 ## Hands-On Demos
 
 - [Post Trip Summaries to Teams with a Connector Tool](demo-travel-agent-teams-tool.md): the presenter rebuilds the Travel Agent as CS-Travel Agent, collects a booking in a topic, and adds one Microsoft Teams action as a tool whose inputs the agent fills from the conversation to post a trip summary to a channel.

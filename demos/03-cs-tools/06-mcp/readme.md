@@ -62,6 +62,12 @@ Governance comes from the connector layer. Copilot Studio reaches MCP servers th
 
 ![One MCP tool registration used from the Copilot Studio test panel and from Microsoft 365 Copilot, each with its own per-user connection to the same HR MCP Server.](../../../labs/03-cs-tools/06-mcp/_images/mcp-registration-and-connections.svg)
 
+## MCP apps: interactive answers in the chat
+
+A tool result is usually text the agent turns into an answer. An MCP app goes further: the server returns a small user interface with the result, such as a picker, a table or a form, and the chat renders it so the user acts on it in place. The Food Catalog MCP server in [`/src/food-catalog-mcp/`](/src/food-catalog-mcp/) ships two, a catalog table and a demand form, as resources beside its tools.
+
+MCP apps render in Microsoft 365 Copilot and in the Copilot Studio preview chat; Teams and the web chat show the text answer only. Plan a channel by that list before an agent depends on the interface. See [MCP apps in Copilot Studio](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/mcp-apps).
+
 ## Building your own server
 
 Learn points to the official MCP SDKs for building a server in a supported language. The repository's HR MCP server in `src/hr-mcp-server` is a .NET 10 web app built on the MCP C# SDK, and it shows how little code a tool needs: a method marked `[McpServerTool]`, with `[Description]` attributes that become the descriptions the orchestrator reads.

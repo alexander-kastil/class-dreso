@@ -42,6 +42,7 @@ A Microsoft 365 Copilot license covers Microsoft's own Copilot experiences and t
 | Microsoft Copilot harness agents, workflows and apps (module 6) | No | From the first build step: authoring, Preview, tests and evaluations all bill |
 | Work IQ API and the Work IQ MCP server | No | Every call, through a Microsoft 365 spending policy |
 | Cowork (module 2) | Needs the license plus a spending policy | Every task, through a Microsoft 365 spending policy |
+| Web IQ | No | Every call, billed per call through Azure |
 
 The test chat of a Standard agent costs nothing: its answers, actions and Graph grounding aren't counted, which is why every Standard agent demo in this class ran at 0 credits. The Microsoft Copilot harness is the opposite. It charges for model tokens, tools and the harness itself from the moment you start building, so plan its credits before module 6 begins.
 
@@ -91,7 +92,7 @@ Every demo in this class was run live and its cost read back from the portals, a
 | A workflow | **Manage Agents**, channel workflow-agents, feature Workflows | 26.67 credits for one workflow run |
 | A computer use run | The session's **Map view** counts the actions | 4 actions, which is 20 credits at 5 per step |
 | A Work IQ API call | Microsoft 365 **Cost management**, per service and per user only | No split per agent or per tool, so split by day |
-| A Cowork task | Microsoft 365 **Cost management**, account-wide | No per-task cost at all |
+| A Cowork task | Microsoft 365 **Cost management**, account-wide; `/cost` in the task | `/cost` gives an approximate figure for the session; it is no billing record |
 | An app build | **Manage Agents**, grouped as **App** under billable features | Not posted on the day of the build |
 
 **Manage Agents** is the per-agent source of truth, and an agent appears there only after it has billed credits. The Copilot Studio **Monitor** page counts Preview credits without listing the Preview sessions, so per-session detail stays in **Preview** > **History**.
@@ -126,6 +127,8 @@ Everything this class needs can be booked month by month except the pre-purchase
 | Agent 365 add-on (per user) | Yes, about $18 per month | About $15 per month |
 | Agent 365 trial | 30 days free; converts to paid unless recurring billing is turned off | Not applicable |
 | Microsoft 365 Business Premium, E5, Power Apps Premium (per user) | Usually yes, at about 20% more | Yes |
+
+Microsoft 365 E7 includes Agent 365 and the Microsoft Entra Suite. Agent 365 has been generally available since May 1, 2026, and is sold as an add-on to Microsoft 365 E5, A5 and Business Premium. An Azure Flex Plan is a monetary commitment per offer, and Learn names Copilot Credits and GitHub as the offers it covers.
 
 Prices are US list prices from partner sources, so check the euro price and the term on the checkout page. With a Microsoft Customer Agreement billing account, a prorated refund is possible only within seven days of the start or renewal of a subscription; after that, turn off **recurring billing** so it ends at the end of its term.
 
@@ -174,3 +177,6 @@ The PowerShell [scripts](../../../setup/scripts/readme.md) create class users wi
 - [Automate web and desktop apps with computer use](https://learn.microsoft.com/microsoft-copilot-studio/computer-use)
 - [License options for Microsoft Copilot](https://learn.microsoft.com/microsoft-365/copilot/copilot-license-options)
 - [FAQ for Copilot Studio billing and licensing](https://learn.microsoft.com/microsoft-copilot-studio/faq-billing-licensing)
+- [Microsoft Entra licensing](https://learn.microsoft.com/entra/fundamentals/licensing)
+- [Azure Flex Plan overview](https://learn.microsoft.com/azure/cost-management-billing/benefits/flex-plan/flex-plan-overview)
+- [Web IQ pricing](https://learn.microsoft.com/web-iq/resources/pricing)

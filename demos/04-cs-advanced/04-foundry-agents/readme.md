@@ -24,6 +24,8 @@ Foundry offers three agent types, and the choice decides how much you build vers
 | How callers reach it | Managed endpoint | Real-time WebSocket through Voice Live | Managed endpoint, plus custom protocols |
 | Best for | A fast start and production agents without custom orchestration | Real-time spoken conversations | Agents that call into custom code or need custom orchestration |
 
+A prompt agent can also run on the Microsoft Copilot harness, the runtime behind Copilot Studio's harness agents. It stays a prompt agent (`kind: prompt`) with `harness.type: microsoft_copilot_preview`, the choice is made when the agent is created, and the option is in preview; see [Use tools and skills with the Copilot harness](https://learn.microsoft.com/azure/foundry/agents/how-to/use-tools-skills-copilot-harness).
+
 A prompt agent is the one a maker can create and test entirely in the portal, which is why the demo uses it. A hosted agent runs a team's own code in a per-session sandbox with a dedicated Microsoft Entra identity, and Foundry still handles the endpoint, scaling and observability. Teams that already run agent code elsewhere can also call the Responses API directly and keep the agent definition in their own code.
 
 ## What a prompt agent is made of
@@ -83,6 +85,26 @@ Both platforms build agents with instructions, a model and tools, and the vocabu
 | Billing | Azure consumption: inference, tool use and, for hosted agents, compute | Copilot Credits |
 
 The two meet when a Copilot Studio agent connects a Foundry agent as a specialist: the maker keeps the conversation, the channels and the routing, and the developer team keeps the specialist's model, tools and versions.
+
+## Governing what an agent may reach and spend
+
+A Foundry agent runs in your Azure subscription, so its limits are set in Foundry and in Azure Policy. Each control below has its own status, and none of them covers all three areas at once.
+
+| Control | What it does | Status |
+| --- | --- | --- |
+| Egress policy on a hosted agent | An RAI policy (`egressPolicy`, mode Audit or Enforced) with a default deny that turns the listed hosts into an allow list | Generally available; the Transform rule that injects a credential from a managed identity or a secret is preview |
+| Cost controls | Cap spending in US dollars or tokens per Foundry resource, project, deployment, agent or session, then send an alert or block usage; blocked calls return HTTP 429 `budget_exceeded` | Preview |
+| Azure Policy for models | "Foundry model deployments should only use approved models", checked when a model is deployed | Generally available |
+| Azure Policy for tools | Allows only approved tool types, MCP endpoints and MCP connectors when an agent or toolbox is created or updated | Preview |
+| Guardrails | Named objects in a project, assigned to model deployments and agents; an agent inherits its model's guardrail unless one is assigned to it | See [Guardrails overview](https://learn.microsoft.com/azure/foundry/guardrails/guardrails-overview) |
+
+Cost controls can overshoot slightly, and their running total isn't reconciled with the bill, so keep an Azure budget beside them.
+
+## Evaluating and improving a Foundry agent
+
+Foundry evaluates an agent with built-in agent evaluators such as **Task Adherence** and **Intent Resolution**, and with rubric evaluators you describe in plain language; safety and task-level rubrics are preview. Whole conversations can be evaluated in the portal as **Full conversations (preview)**, and evaluations can run continuously or on a schedule against live traffic.
+
+The agent optimizer (preview) takes the next step: it tunes the instructions, skills, tool descriptions and model of a prompt or hosted agent and ranks the candidates by a composite score. Treat its winner as a proposal, and rerun your own evaluation set before you publish the change. See [Agent optimizer overview](https://learn.microsoft.com/azure/foundry/agents/concepts/agent-optimizer-overview) and [Continuous and scheduled evaluation](https://learn.microsoft.com/azure/foundry/observability/how-to/continuous-scheduled-evaluation).
 
 ## Hands-On Demo
 

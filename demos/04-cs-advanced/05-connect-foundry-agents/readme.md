@@ -65,7 +65,7 @@ Validate the input in Copilot Studio before the external call runs. Ordered inst
 
 ## Authentication and access
 
-Copilot Studio reaches the agent through the connection you created with the project endpoint, and the Foundry endpoint accepts only Microsoft Entra ID and Azure Bot Service authorization; API keys aren't supported. Under the `Entra` scheme a caller needs at least the **Foundry Agent Consumer** role on the project or agent. The `BotServiceRbac` scheme, which the Activity Protocol request above adds, lets only identities with the Azure permissions to call the agent in Foundry invoke it.
+Copilot Studio reaches the agent through the connection you created with the project endpoint, and the Foundry endpoint accepts only Microsoft Entra ID and Azure Bot Service authorization; API keys aren't supported. Under the `Entra` scheme a caller needs at least the **Foundry Agent Consumer** role on the project or agent. The `BotServiceRbac` scheme, which the Activity Protocol request above adds, lets only identities with the Azure permissions to call the agent in Foundry invoke it. The `AgentBlueprint` scheme (preview) accepts a token issued for the agent's blueprint, and a caller signed in that way needs no Azure RBAC role on the project; see [Agent endpoint authorization](https://learn.microsoft.com/azure/foundry/agents/concepts/agent-endpoint-authorization).
 
 Plan access with the project owner before the demo or the rollout: who signs in to create the connection, which role that account holds, and whether end users need access of their own. Learn's Microsoft Copilot harness page states that the connection authenticates with the user's Microsoft Entra ID sign-in.
 

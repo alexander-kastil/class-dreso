@@ -79,6 +79,10 @@ The description you see after connecting is a local copy that you control, and c
 
 In the parent's instructions, name each connected or child agent with a reference. The `/` insert writes one such as `{System.Bot.Components.Agents.'<schema>.InvokeConnectedAgentTaskAction.<FileName>'.DisplayName}`, which renders as an agent chip, and with those chips all five routes of the travel planner reached the right agent.
 
+## Task agents
+
+Child and connected agents are built ahead of time. Task agents are the runtime variant: the main agent starts a task agent for a piece of work, guided by instructions or skills, and no separate agent has to be published for it. Task agents are available only in environments on the early release cycle; see [Task agents overview](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/task-agents-overview).
+
 ## Routing patterns that hold up
 
 Learn's multi-agent guidance condenses into a checklist. Most failures in a multi-agent design are duplicate replies, a subagent that talks to the user when it should report back, or a parent that delegates a request no subagent can answer.

@@ -39,6 +39,8 @@ A new admin approval is only needed when you change the agent's details, such as
 
 Sharing and listing are separate steps. Sharing the agent with a security group gives its members **End user access**, shown as **Viewer**, and **Show in Built By Your Colleagues** under **Show to my teammates and shared users** is what lists it in Teams. The share is saved as `authorizedSecurityGroupIds` in the agent's `settings.mcs.yml`, so access is reviewable in source control.
 
+The **Share** panel reaches individual users, security groups, or your entire organization, and grants **Can use**, **Can edit**, or **Can view analytics**. On a Microsoft Copilot harness agent the new share experience grants viewing only; co-authors need the standard sharing experience or an environment security role. See [Share agents with other users](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/authoring-share-agent).
+
 Two Teams behaviors surprise makers. The **Conversation Start** topic runs only once per user in Teams, the first time they add the agent, because Teams reuses the same conversation. Teams also renders at most six suggested actions in a question and shows the satisfaction survey as text only.
 
 ## SharePoint

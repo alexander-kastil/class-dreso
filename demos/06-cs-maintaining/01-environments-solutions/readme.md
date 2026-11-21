@@ -30,6 +30,10 @@ Admins find the affected environments in the Power Platform Admin Center under *
 
 Makers export the solutions from their developer environment before December 15, 2026, so their agents survive the suspension. This is one more reason to build in a custom solution from the start: an agent inside a solution moves to any other environment with one export and one import. To try premium capabilities without a license, a [standard trial environment](https://learn.microsoft.com/power-platform/admin/trial-environments) remains available.
 
+## Keep makers out of the default environment
+
+Environment routing sends a maker who opens Copilot Studio or Power Apps to a personal developer environment, so personal experiments stop landing in the shared default environment. Learn recommends collecting those environments in a dedicated **Personal Productivity** environment group. A group carries rules for all its environments at once, and an advanced connector policy is one of them: it decides which connectors, and which actions of a connector, makers in the group may use. See [Environment groups](https://learn.microsoft.com/power-platform/admin/environment-groups).
+
 ## Links & Resources
 
 - [Deprecation of unmanaged developer environments and the Power Apps Developer Plan](https://learn.microsoft.com/power-platform/important-changes-coming#deprecation-of-unmanaged-developer-environments-and-the-power-apps-developer-plan)
