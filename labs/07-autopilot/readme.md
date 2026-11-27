@@ -1,42 +1,21 @@
 # AI Teammates: Autopilot & Agent Accounts
 
-Hands-on labs for [Module 5](../../demos/07-autopilot/readme.md). This is a draft lab plan: each lab gets its full guide once it has been run end to end in a Frontier tenant with agent accounts activated.
+Hands-on labs for [Module 8](../../demos/07-autopilot/readme.md). Every lab needs a tenant enrolled in the Frontier program with Autopilot activated and each learner covered by a spending policy that includes Autopilot. The labs for agent accounts are still a plan: each gets its full guide once it has been run end to end in a Frontier tenant with agent accounts activated.
 
-| Title | Minutes |
-|-------|---------|
-| [Lab 1: Write a Teammate Brief](#lab-1-write-a-teammate-brief) | 20 |
-| [Lab 2: Set Up Background Work and Approvals](#lab-2-set-up-background-work-and-approvals) | 30 |
-| [Lab 3: Create the Cadence Agent with an Account](#lab-3-create-the-cadence-agent-with-an-account) | 30 |
-| [Lab 4: Make Cadence Proactive](#lab-4-make-cadence-proactive) | 40 |
-| [Lab 5: Teammate Readiness Review](#lab-5-teammate-readiness-review) | 25 |
-| **Total** | **145** |
+| Lab | Deutsch | Focus | Minutes |
+|-----|---------|-------|---------|
+| [Create Your Autopilot](01-meet-autopilot/lab-01-create-your-autopilot.md) | | Name it, choose its starter routines and confirm the profile it inferred, plus 10 to 30 minutes of provisioning | 10 |
+| [Brief, Schedule, Approve](02-autopilot-at-work/lab-01-brief-schedule-approve.md) | | Write the brief, add a scheduled and an event routine, and answer an approval, in pairs | 40 |
+| [Autopilot Readiness Review](06-autopilot-admin/lab-01-autopilot-readiness-review.md) | | Check your Autopilot's owner, reach, routines, memory, approvals and credits | 15 |
+| Test Your Autopilot's Boundaries | | Trigger three actions, read each card's reason and check that a mail authorizes nothing, in pairs | 25 |
+| Build and Share a Skill | | Create, upload and share skills, and use the one your partner shared, in pairs | 30 |
+| **Total** | | | **120** |
 
-> Note: Labs 2 to 5 need a tenant enrolled in the Frontier program. Labs 3 to 5 also need an early release environment, a maker license (Microsoft 365 E5 with the Agent 365 add-on, or Microsoft 365 E7), and a free Microsoft 365 Frontier for AI Teammates license per participant agent. Lab 1 runs anywhere.
+## Planned Labs for Agent Accounts
 
-## Lab 1: Write a Teammate Brief
+These labs need an early release environment, a maker license (Microsoft 365 E5 with the Agent 365 add-on, or Microsoft 365 E7), and a free Microsoft 365 Frontier for AI Teammates license per participant agent.
 
-Topic: [Meet Autopilot](../../demos/07-autopilot/01-meet-autopilot/readme.md). About 20 minutes, no preview access.
-
-![A business process that needs an owner raises the question who builds the teammate: a user who describes name, role, and goal gets Autopilot, and a maker who configures instructions, tools, and triggers builds a Copilot Studio agent with an agent account. Both paths end in their own identity, memory, Teams and Outlook presence, governed in Agent 365 and Entra.](../../demos/07-autopilot/pptx/images/01-03-two-paths.svg)
-
-- Pick a recurring process from your own work (supplier review, project status, onboarding).
-- Write the name, role, goal, boundaries, and escalation rules for a teammate that owns it.
-- Decide whether Autopilot or a Copilot Studio agent with an account should carry it, and justify the choice against the comparison table.
-
-## Lab 2: Set Up Background Work and Approvals
-
-Topic: [Working with Autopilot](../../demos/07-autopilot/02-autopilot-at-work/readme.md). About 30 minutes.
-
-![A timeline with three lanes: an interactive conversation runs when you send a message, a heartbeat runs one prompt at a fixed interval within your work hours, and an automation runs on a schedule, on a condition, or once.](../../demos/07-autopilot/pptx/images/02-02-background-work.svg)
-
-![A sensitive action pauses until you choose Approve, Always allow, or Deny, and content from outside is tagged as untrusted and treated as data.](../../demos/07-autopilot/pptx/images/02-03-approvals-untrusted.svg)
-
-- Brief the teammate with the Lab 1 brief.
-- Configure a heartbeat with work hours and a scheduled automation.
-- Add a custom `SKILL.md` and confirm the teammate discovers it.
-- Trigger an outbound message and record which actions stop for approval.
-
-## Lab 3: Create the Cadence Agent with an Account
+### Lab 3: Create the Cadence Agent with an Account
 
 Topic: [Agent Accounts](../../demos/07-autopilot/03-agent-accounts/readme.md). About 30 minutes.
 
@@ -47,7 +26,7 @@ Topic: [Agent Accounts](../../demos/07-autopilot/03-agent-accounts/readme.md). A
 - Review the authentication mode of each tool.
 - Publish and find Cadence in the Teams people picker and the directory.
 
-## Lab 4: Make Cadence Proactive
+### Lab 4: Make Cadence Proactive
 
 Topic: [Proactive Teammates](../../demos/07-autopilot/04-proactive-teammates/readme.md). About 40 minutes.
 
@@ -56,7 +35,7 @@ Topic: [Proactive Teammates](../../demos/07-autopilot/04-proactive-teammates/rea
 - Run one review cycle and open the new review document.
 - Contribute an update as a reviewer, once by email reply and once by @mention in Teams.
 
-## Lab 5: Teammate Readiness Review
+### Lab 5: Teammate Readiness Review
 
 Topic: [Shared Memory, Licensing & Teammate Governance](../../demos/07-autopilot/05-memory-governance/readme.md). About 25 minutes.
 

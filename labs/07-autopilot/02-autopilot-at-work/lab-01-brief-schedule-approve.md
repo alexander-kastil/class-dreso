@@ -1,6 +1,8 @@
 # Lab: Brief, Schedule, Approve
 
-Time: 35 minutes, in pairs. Each of you briefs your own Autopilot and plays the supplier for your partner.
+You work in pairs. Each of you briefs your own Autopilot and plays the supplier for your partner.
+
+Duration: about 40 minutes.
 
 ## What You Build
 
@@ -56,9 +58,9 @@ Time: 35 minutes, in pairs. Each of you briefs your own Autopilot and plays the 
    Reply to the supplier and ask whether a partial delivery on Friday morning is possible.
    ```
 
-   Your Autopilot drafts the reply and asks for approval, because your brief said so. Read the draft, then approve or reject it. Note what it does in each case.
+   Your Autopilot drafts the reply and shows an approval card in your Teams chat, because your brief said so. Read the draft and the recipients, then select **Allow** or **Deny**. Note what it does in each case.
 
-7. **Change a routine.** In the management panel, pause the 08:00 routine, then resume it.
+7. **Change a routine.** In the management panel, open **Routines**, turn the 08:00 routine's switch off, then on again.
 
 ## Check Your Work
 

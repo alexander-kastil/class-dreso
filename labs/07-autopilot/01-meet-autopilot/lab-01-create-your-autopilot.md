@@ -1,6 +1,6 @@
 # Lab: Create Your Autopilot
 
-Time: 20 minutes, plus 10 to 30 minutes of provisioning that runs while the class continues.
+Duration: about 10 minutes, plus 10 to 30 minutes of provisioning that runs while the class continues.
 
 ## What You Build
 
@@ -8,7 +8,7 @@ Your own Autopilot: a name and look your coworkers will see, the starter routine
 
 ## Prerequisites
 
-- Your class account has a Microsoft 365 Copilot license and is in the group the admin enabled for Autopilot (see [Autopilot setup](../../../setup/12-autopilot-setup.md)).
+- Your class account has a Microsoft 365 Copilot license, is in the group the admin enabled for Autopilot and is covered by a spending policy that includes Autopilot (see [Autopilot setup](../../../setup/12-autopilot-setup.md)).
 - A browser. Nothing is installed on your machine.
 
 ## Steps
@@ -39,6 +39,6 @@ Your own Autopilot: a name and look your coworkers will see, the starter routine
 
 | What you see | Why |
 | --- | --- |
-| No **Create your Autopilot** on Home | Your account lacks a Copilot license, isn't in the Autopilot group, or Autopilot isn't activated in the tenant. Ask the trainer. |
+| No **Create your Autopilot** on Home | Your account lacks a Copilot license, isn't in the Autopilot group, isn't covered by a spending policy, or Autopilot isn't activated in the tenant. Ask the trainer. |
 | You already have one | Each person can have one Autopilot. Use the one you have. |
 | It stops answering during the day | The spending policy may have run out of credits. Autopilot stops without telling you. Tell the trainer. |

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-labelledby="t d" font-family="Segoe UI, Helvetica, Arial, sans-serif">
 <title id="t">How the two paths to a teammate relate</title>
-<desc id="d">A business process that needs an owner raises the question who builds the teammate. When a user describes name, role and goal, the path leads to Autopilot (private preview). When a maker configures instructions, tools and triggers, it leads to a Copilot Studio agent with an agent account. Both paths lead to own identity, memory, Teams and Outlook presence, governed in Agent 365 and Entra.</desc>
+<desc id="d">A business process that needs an owner raises the question who builds the teammate. When a user describes name, role and goal, the path leads to Autopilot (Frontier preview). When a maker configures instructions, tools and triggers, it leads to a Copilot Studio agent with an agent account. Both paths lead to own identity, memory, Teams and Outlook presence, governed in Agent 365 and Entra.</desc>
 <rect x="0" y="0" width="1920" height="1080" fill="#ffffff"/>
 <defs><marker id="ah" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="20" markerHeight="20" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#57606a"/></marker></defs>
 <rect x="710" y="40" width="500" height="120" rx="16" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
@@ -11,7 +11,7 @@
 <text x="960" y="330" font-size="28" font-weight="600" fill="#24292f" text-anchor="middle">the teammate?</text>
 <rect x="170" y="460" width="500" height="140" rx="16" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
 <text x="420" y="520" font-size="30" font-weight="600" fill="#24292f" text-anchor="middle">Autopilot</text>
-<text x="420" y="560" font-size="30" font-weight="600" fill="#24292f" text-anchor="middle">(private preview)</text>
+<text x="420" y="560" font-size="30" font-weight="600" fill="#24292f" text-anchor="middle">(Frontier preview)</text>
 <rect x="1250" y="460" width="500" height="140" rx="16" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
 <text x="1500" y="520" font-size="30" font-weight="600" fill="#24292f" text-anchor="middle">Copilot Studio agent</text>
 <text x="1500" y="560" font-size="30" font-weight="600" fill="#24292f" text-anchor="middle">with an agent account</text>

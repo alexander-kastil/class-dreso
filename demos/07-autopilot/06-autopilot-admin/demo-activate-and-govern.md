@@ -4,7 +4,7 @@ An admin who switches Autopilot on without a plan hands every user an agent that
 
 What you practice here: reading Autopilot's admin surface in the order an admin decides, from rollout to guardrails.
 
-Duration: about 20 minutes.
+Duration: about 40 minutes.
 
 ------
 

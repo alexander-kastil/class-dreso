@@ -1,6 +1,8 @@
 # Demo: Place the Teammate on the Map
 
-Time: 10 minutes. The presenter runs one canteen request through Chat, Cowork and Autopilot so the class sees where each mode stops.
+The presenter runs one canteen request through Chat, Cowork and Autopilot so the class sees where each mode stops.
+
+Duration: about 25 minutes.
 
 ## What You Show
 

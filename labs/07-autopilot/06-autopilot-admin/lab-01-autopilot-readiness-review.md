@@ -1,6 +1,8 @@
 # Lab: Autopilot Readiness Review
 
-Time: 25 minutes. You review your own Autopilot the way an admin or a team lead would before trusting it with real work. No admin rights are needed.
+You review your own Autopilot the way an admin or a team lead would before trusting it with real work. No admin rights are needed.
+
+Duration: about 15 minutes.
 
 ## What You Build
 
@@ -21,7 +23,7 @@ A Word document `autopilot-readiness.docx` in your OneDrive with one filled-in r
    | Routines and when they run | |
    | Boundaries in the brief | |
    | What it remembers about you | |
-   | Who can talk to it | |
+   | Approvals it asked for | |
    | Credits indicator | |
    | What happens if you leave the company | |
 
@@ -45,11 +47,11 @@ A Word document `autopilot-readiness.docx` in your OneDrive with one filled-in r
    What do you remember about me and my work?
    ```
 
-   Find one item that is wrong or that you don't want kept, and tell your Autopilot to correct or remove it. Note what changed.
+   Find one item that is wrong or that you don't want kept, and tell your Autopilot to correct or remove it. Open **Review what [name] knows** in the management panel and check that the change shows there.
 
-7. **Who can talk to it.** Check who in your team channel can @-mention your Autopilot, and how you would stop it in that channel.
+7. **Approvals.** Open **Activity**, filter by the type **Approvals**, and note which actions waited for you and which ran after the automated review.
 
-8. **Credits.** Find the "Credits in use" indicator and note what it shows. Remember that Autopilot stops without warning when the spending policy runs out.
+8. **Credits.** Find the **Credits in use** indicator at the top of the Autopilot page and note what it shows: that credits apply, with no count. Remember that Autopilot stops without warning when the spending policy runs out.
 
 9. **Leaving.** Write down your answer: an Autopilot goes with its owner, so what should happen to its routines and memory when you leave? Compare your answer with how an agent with an account, which stays with the team's work, would be handled.
 

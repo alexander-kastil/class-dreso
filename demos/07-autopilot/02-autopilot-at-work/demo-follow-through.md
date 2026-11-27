@@ -1,6 +1,8 @@
 # Demo: Follow-Through on the Supplier Review
 
-Time: 15 minutes. Autopilot owns the canteen supplier review, reacts to a supplier mail, and turns a Teams request into a meeting and a decision document, asking before it involves anyone new.
+Autopilot owns the canteen supplier review, reacts to a supplier mail, and turns a Teams request into a meeting and a decision document, asking before it involves anyone new.
+
+Duration: about 25 minutes.
 
 ## Before the Demo
 
@@ -40,7 +42,7 @@ Time: 15 minutes. Autopilot owns the canteen supplier review, reacts to a suppli
 ## Talking Points
 
 - The brief named the outcome, the sources and a boundary ("ask me before you send anything").
-- Crosscheck, the automated review, compares each action with what you asked. Matching actions run; the rest wait for your approval. Autopilot can't approve itself, and payments always ask.
+- Crosscheck, the automated review, compares each action with what you asked. Matching actions run; the rest show an approval card with **Allow** and **Deny**. Autopilot can't approve itself, and payments always ask.
 - Check results where they land (the tracker, the document, the invite), not in a progress message.
 
 ## If It Doesn't Go to Plan
@@ -48,4 +50,4 @@ Time: 15 minutes. Autopilot owns the canteen supplier review, reacts to a suppli
 | What happens | Do this |
 | --- | --- |
 | No reaction to the mail after a few minutes | Paste the mail into the main conversation and ask Autopilot to handle it. |
-| The @-mention isn't answered | Check that your Autopilot is a member of the channel and that you are online: requests from others need its owner's presence, except for calendaring. |
+| The @-mention isn't answered | Check that your Autopilot is a member of the channel. If the tenant doesn't show channel mentions yet, make the same request in your private conversation with Autopilot. |
