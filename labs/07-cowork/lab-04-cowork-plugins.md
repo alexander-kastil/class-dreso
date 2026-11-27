@@ -58,7 +58,7 @@ Keep this distinction in mind:
 - **Users** add allowed plugins from **Discover**, turn them on or off per conversation in **Sources & Skills**, and can't remove admin-deployed plugins
 - **Admins** control availability, deployment scope, and governance from the Microsoft 365 Admin Center
 
-![Five sources feed the Cowork side panel: built-in skills, custom skills from Customize or OneDrive, plugins from Discover, admin-deployed plugins, and skills that are shared or uploaded.](../../demos/08-cowork/pptx/images/06-02-where-plugins-fit.svg)
+![Five sources feed the Cowork side panel: built-in skills, custom skills from Customize or OneDrive, plugins from Discover, admin-deployed plugins, and skills that are shared or uploaded.](../../demos/07-cowork/pptx/images/06-02-where-plugins-fit.svg)
 
 If a plugin requires connector authentication, each user still completes their own one-time sign-in and consent flow.
 
@@ -249,7 +249,7 @@ In each `SKILL.md`:
 - Define a clear workflow and output format
 - Reference tools explicitly when a connector is required
 
-![Anatomy of a SKILL.md: the YAML header holds the name, which matches the folder exactly, and the description Cowork reads to decide when the skill applies. Below it, the instructions are the step-by-step recipe Cowork follows.](../../demos/08-cowork/pptx/images/03-02-skill-anatomy.svg)
+![Anatomy of a SKILL.md: the YAML header holds the name, which matches the folder exactly, and the description Cowork reads to decide when the skill applies. Below it, the instructions are the step-by-step recipe Cowork follows.](../../demos/07-cowork/pptx/images/03-02-skill-anatomy.svg)
 
 You can copy the content of the three skills from the following URLs:
 
@@ -442,7 +442,7 @@ Before you involve an admin, test the package yourself. Open **Plugins**, select
 
 Sharing with **Specific users in your organization** also needs no admin, but publishing to the whole organization waits for admin approval. The admin upload in Step 1 is what lists the plugin in **Discover**, and custom plugins don't run in Cowork on mobile.
 
-![Four widening steps of reach for an uploaded plugin: Only you and Specific users in your organization need no admin, the whole organization waits for admin approval, and a public store listing goes through Partner Center.](../../demos/08-cowork/pptx/images/06-03-sharing-a-plugin.svg)
+![Four widening steps of reach for an uploaded plugin: Only you and Specific users in your organization need no admin, the whole organization waits for admin approval, and a public store listing goes through Partner Center.](../../demos/07-cowork/pptx/images/06-03-sharing-a-plugin.svg)
 
 ### Step 1: Upload the plugin in the Microsoft 365 Admin Center
 

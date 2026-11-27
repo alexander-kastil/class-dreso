@@ -6,7 +6,7 @@ In this lab you learn how to build custom Agent Skills for Copilot Cowork, how t
 
 At a high level, an Agent Skill is a structured instruction file that teaches Cowork when and how to execute a specific domain workflow. Skills are not generic prompts. They include intent signals, execution guidance, and output expectations so Cowork can reliably select and run the right behavior for a given request.
 
-![Annotated weekly-report SKILL.md: the name matches the folder name, the description is what Cowork reads to decide when the skill applies, and the instructions are the recipe Cowork follows.](../../demos/08-cowork/pptx/images/03-02-skill-anatomy.svg)
+![Annotated weekly-report SKILL.md: the name matches the folder name, the description is what Cowork reads to decide when the skill applies, and the instructions are the recipe Cowork follows.](../../demos/07-cowork/pptx/images/03-02-skill-anatomy.svg)
 
 By the end of this lab you will:
 
@@ -23,7 +23,7 @@ In this exercise you build a clear mental model of skills, where they fit in Cow
 
 Cowork uses skills as reusable execution patterns. During a task, Cowork can load one or more skills based on conversation intent and then run a step-by-step workflow.
 
-![Diagram of Cowork splitting a request into a plan: step 1, the Excel skill, builds the spreadsheet and step 2, the Email skill, sends it, while the matching Excel and Email chips light up in the Skills section of the side panel.](../../demos/08-cowork/pptx/images/02-01-side-panel.svg)
+![Diagram of Cowork splitting a request into a plan: step 1, the Excel skill, builds the spreadsheet and step 2, the Email skill, sends it, while the matching Excel and Email chips light up in the Skills section of the side panel.](../../demos/07-cowork/pptx/images/02-01-side-panel.svg)
 
 From a practical perspective, skills help Cowork:
 
@@ -52,7 +52,7 @@ Keep this distinction in mind:
 
 Choose a skill-first approach when your main goal is guided task execution. Add plugins and connectors when the workflow also needs external systems.
 
-![Side-by-side comparison of a custom skill, one SKILL.md of instructions you author for your own recurring work, and a plugin, a package of skills, connectors, or both that brings in data or expertise you cannot write yourself.](../../demos/08-cowork/03-custom-skills/_images/skill-vs-plugin.svg)
+![Side-by-side comparison of a custom skill, one SKILL.md of instructions you author for your own recurring work, and a plugin, a package of skills, connectors, or both that brings in data or expertise you cannot write yourself.](../../demos/07-cowork/03-custom-skills/_images/skill-vs-plugin.svg)
 
 ## Exercise 2: Manage skills in the Plugins page
 
@@ -118,7 +118,7 @@ Test it with the following URL: https://learn.microsoft.com/en-us/microsoft-copi
 
 Read the **Skill Report** that Cowork returns each time it creates or updates your skill. The score runs from 0 to 100 across **Trigger clarity**, **Instruction specificity**, **Scope boundaries**, and **Robustness**, each worth 25 points. The bands are **Excellent** (85+), **Good** (70-84), **Needs work** (50-69), and **Poor** (below 50). Fix the lowest-scoring dimension first, then test again in a new conversation.
 
-![Diagram of the Skill Report score: four dimensions worth 25 points each add up to one score from 0 to 100, which falls into the bands Poor, Needs work, Good, or Excellent.](../../demos/08-cowork/03-custom-skills/_images/skill-report-score.svg)
+![Diagram of the Skill Report score: four dimensions worth 25 points each add up to one score from 0 to 100, which falls into the bands Poor, Needs work, Good, or Excellent.](../../demos/07-cowork/03-custom-skills/_images/skill-report-score.svg)
 
 ### Step 2: Save and verify where the skill is stored
 
@@ -130,7 +130,7 @@ Once you are happy with your skill, close the current session. Cowork stored the
 
 Browse your OneDrive for Business and check the content of the new skill folder. A skill you ask Cowork to build in chat, or write yourself, is saved in the same folder.
 
-![Diagram of the guided flow, asking in chat, and writing a SKILL.md yourself all ending in Documents/Cowork/skills/, where the next new task discovers the skills at its start while a task already open does not list them.](../../demos/08-cowork/pptx/images/03-01-create-a-skill.svg)
+![Diagram of the guided flow, asking in chat, and writing a SKILL.md yourself all ending in Documents/Cowork/skills/, where the next new task discovers the skills at its start while a task already open does not list them.](../../demos/07-cowork/pptx/images/03-01-create-a-skill.svg)
 
 ![The folder on OneDrive for Business under Documents/Cowork/Skills containing the SKILL.md definition file.](_images/cowork-custom-skill-03.png)
 

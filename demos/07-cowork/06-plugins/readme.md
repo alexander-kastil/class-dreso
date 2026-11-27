@@ -52,7 +52,7 @@ Anthropic's Claude plugins follow the same idea, and the table compares the two.
 | Who controls it | Org admin settings | Agent 365: publisher filters, user scopes, access requests, tool toggles |
 | Format | Claude plugin, `SKILL.md` | M365 app package, the same `SKILL.md`, imports and exports the Claude format |
 
-Cowork converts a Claude plugin package when you upload it, and `wiqd` imports and exports that format, as the [plugin round-trip exercise](../../../labs/08-cowork/lab-04-cowork-plugins.md#exercise-7-write-once-run-in-claude-and-copilot) shows.
+Cowork converts a Claude plugin package when you upload it, and `wiqd` imports and exports that format, as the [plugin round-trip exercise](../../../labs/07-cowork/lab-04-cowork-plugins.md#exercise-7-write-once-run-in-claude-and-copilot) shows.
 
 ---
 
@@ -107,7 +107,7 @@ Many teams already keep their skills in a Claude Code plugin. The `wiqd plugin i
 wiqd plugin import --path <claude-plugin-folder> --privacy-url <privacy-url> --terms-url <terms-url> --website-url <website-url>
 ```
 
-The Microsoft 365 manifest requires a privacy and a terms link, so the first import needs both. The website link is needed when the plugin's `plugin.json` names no homepage or author; without it the import stops with `developer.websiteUrl could not be resolved`. Microsoft Learn says an imported project cannot yet be provisioned, packaged or shared, but in the course tenant on 2026-10-21 (WIQD 0.19.0) all three ran, as [Exercise 7 of the lab](../../../labs/08-cowork/lab-04-cowork-plugins.md#exercise-7-write-once-run-in-claude-and-copilot) shows.
+The Microsoft 365 manifest requires a privacy and a terms link, so the first import needs both. The website link is needed when the plugin's `plugin.json` names no homepage or author; without it the import stops with `developer.websiteUrl could not be resolved`. Microsoft Learn says an imported project cannot yet be provisioned, packaged or shared, but in the course tenant on 2026-10-21 (WIQD 0.19.0) all three ran, as [Exercise 7 of the lab](../../../labs/07-cowork/lab-04-cowork-plugins.md#exercise-7-write-once-run-in-claude-and-copilot) shows.
 
 > **Important:** Only skills and MCP servers make the trip. Slash commands (`commands/`), sub-agents (`agents/`) and hooks (`hooks/`) are not yet supported in the Microsoft 365 manifest, and `settings.json` and `bin/` do not apply, so the import leaves all of them behind. A Claude harness built mostly from commands, agents and hooks arrives in Cowork as its skills and connectors only.
 

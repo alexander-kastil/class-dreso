@@ -6,7 +6,7 @@ In this lab you run a piece of work that spans several Cowork tasks as one proje
 
 The lab stands on its own: it needs a Cowork-ready account and the two files in the [lab-03-cowork-projects](lab-03-cowork-projects) folder, nothing from the other labs.
 
-![A Q3 Close project holds its instructions, the Recent tasks, the Outputs files and the Project context; a new task started from the project page inherits the instructions and the available context, and its file lands in Outputs.](../../demos/08-cowork/pptx/images/04-01-what-a-project-holds.svg)
+![A Q3 Close project holds its instructions, the Recent tasks, the Outputs files and the Project context; a new task started from the project page inherits the instructions and the available context, and its file lands in Outputs.](../../demos/07-cowork/pptx/images/04-01-what-a-project-holds.svg)
 
 By the end of this lab you will:
 
@@ -167,6 +167,6 @@ Read vienna-hub-launch-plan.xlsx and write the weekly launch status brief as a W
 
 You ran a launch that spans several tasks as one Cowork project. The project's instructions set the audience, the terms and the format once, and every task started from the project page followed them, while the same request outside the project did not. **Outputs** collected the files of every task, an outside chat joined and left the project without losing its conversation, and archiving kept the finished work out of the way without deleting it.
 
-Read more in [Organizing Work with Projects](../../demos/08-cowork/04-projects/readme.md) and in [Use projects in Copilot Cowork](https://learn.microsoft.com/en-us/copilot/cowork/cowork-projects).
+Read more in [Organizing Work with Projects](../../demos/07-cowork/04-projects/readme.md) and in [Use projects in Copilot Cowork](https://learn.microsoft.com/en-us/copilot/cowork/cowork-projects).
 
 Continue with [Lab 04: Build Your First Cowork Plugin](lab-04-cowork-plugins.md).

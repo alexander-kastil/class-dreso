@@ -12,8 +12,6 @@ Microsoft Copilot harness agents come next, built side by side with the Standard
 
 You then publish and maintain what you build: environments and solutions, Microsoft channels, ALM, and source control. Finally you hand the authoring itself to a coding agent: Claude Code with the Copilot Studio plugins clones an agent to `.mcs.yml` files, adds and validates a topic, publishes and tests it, and migrates a Standard agent to the Microsoft Copilot harness, all from the terminal and every change a file you can diff.
 
-An optional forward look hands whole processes to AI teammates: Autopilot, and agent accounts that give a Copilot Studio agent its own identity, mailbox, and Teams presence, made proactive with triggers and governed through shared memory and licensing.
-
 ## Duration
 
 3 Days
@@ -32,14 +30,13 @@ An optional forward look hands whole processes to AI teammates: Autopilot, and a
 
 | Module | Topics |
 | --- | --- |
-| [Module 1: Introduction to Copilot Cowork & Copilot Studio](demos/01-intro/readme.md) | 6 |
+| [Module 1:Introduction to Copilot Cowork & Copilot Studio](demos/01-intro/readme.md) | 6 |
 | [Module 3: Copilot Studio Basics](demos/02-cs-basics/readme.md) | 6 |
 | [Module 4: Extending Copilot Studio Agents with Tools](demos/03-cs-tools/readme.md) | 7 |
 | [Module 5: Advanced Copilot Studio Agents](demos/04-cs-advanced/readme.md) | 5 |
 | [Module 6: Test and Evaluate Copilot Studio Agents](demos/05-cs-evaluations/readme.md) | 1 |
 | [Module 7: Publishing & Maintaining Copilot Studio Agents](demos/06-cs-maintaining/readme.md) | 5 |
-| [Module 8: AI Teammates: Autopilot & Agent Accounts](demos/07-autopilot/readme.md) | 6 |
-| [Module 2: Microsoft 365 Copilot Cowork](demos/08-cowork/readme.md) | 7 |
+| [Module 2: Microsoft 365 Copilot Cowork](demos/07-cowork/readme.md) | 7 |
 
 ## Schedule
 
@@ -77,18 +74,18 @@ An optional forward look hands whole processes to AI teammates: Autopilot, and a
 | 15:20 to 15:30 | [Lab: Route Work from a Parent Agent to a Child Agent](labs/04-cs-advanced/03-multi-agent/lab-01-parent-and-child-agents.md) | lab |
 | 15:30 to 16:35 | Module 6 (theory) | theory |
 
-### Day 3: Operations, AI Teammates & Cowork
+### Day 3: Operations & Cowork
 
 | Time | Item | Type |
 | --- | --- | --- |
 | 09:00 to 09:25 | [Lab: Evaluate a Standard Agent with Test Sets](labs/05-cs-evaluations/01-evaluations/lab-01-evaluate-the-hr-agent.md) | lab |
 | 09:25 to 09:35 | Module 7 (theory) | theory |
-| 09:35 to 10:30 | Module 8 (theory) | theory |
+| 09:35 to 10:30 | Module 2 (theory) | theory |
 | 10:30 to 10:45 | Break | break |
-| 10:45 to 11:35 | Module 2 (theory) | theory |
+| 10:45 to 11:35 | Module 2 continued (theory) | theory |
 | 11:35 to 12:50 | Module 2 continued (theory) | theory |
 | 12:50 to 13:50 | Lunch | lunch |
-| 13:50 to 14:20 | [Lab: Copilot Cowork Setup and Extensibility](labs/08-cowork/lab-01-cowork-setup.md) | lab |
-| 14:20 to 14:55 | [Lab: Build Your First Cowork Skill](labs/08-cowork/lab-02-cowork-skills.md) | lab |
+| 13:50 to 14:20 | [Lab: Copilot Cowork Setup and Extensibility](labs/07-cowork/lab-01-cowork-setup.md) | lab |
+| 14:20 to 14:55 | [Lab: Build Your First Cowork Skill](labs/07-cowork/lab-02-cowork-skills.md) | lab |
 | 14:55 to 15:10 | Break | break |
-| 15:10 to 16:25 | [Lab: Build Your First Cowork Plugin](labs/08-cowork/lab-04-cowork-plugins.md) | lab |
+| 15:10 to 16:25 | [Lab: Build Your First Cowork Plugin](labs/07-cowork/lab-04-cowork-plugins.md) | lab |

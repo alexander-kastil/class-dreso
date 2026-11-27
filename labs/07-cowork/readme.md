@@ -20,4 +20,4 @@ Hands-on labs for Copilot Cowork: tenant setup, the execution model, custom Agen
 
 > Authoring and testing custom skills and plugins consumes Copilot Credits. Set spending limits before you start.
 
-Pairs with [Module 2: Cowork](../../demos/08-cowork/readme.md). The lab content is adapted from the [Copilot Developer Camp](https://microsoft.github.io/copilot-camp/pages/copilot-cowork/00-cowork-setup/) Cowork pathway.
+Pairs with [Module 2: Cowork](../../demos/07-cowork/readme.md). The lab content is adapted from the [Copilot Developer Camp](https://microsoft.github.io/copilot-camp/pages/copilot-cowork/00-cowork-setup/) Cowork pathway.

@@ -12,7 +12,7 @@ In dieser Übung erkunden Sie die zentrale Cowork Experience und verstehen, wie 
 
 Copilot Cowork ist für die Ausführung gebaut, nicht nur für die Unterhaltung. Statt nur Prompts zu beantworten, interpretiert Cowork ein Ziel, zerlegt es in Tasks, wählt die nötigen Skills und koordiniert Aktionen über Microsoft 365 Workloads wie Outlook, Teams, Word, Excel, PowerPoint und Enterprise Search. Das Betriebsmodell ist zielgesteuerte Orchestration: User geben den Intent vor, Cowork baut einen Plan und führt ihn aus, und User können jeden Schritt prüfen, während die Arbeit läuft.
 
-![Zwei Bahnen: In Copilot Chat stellen Sie eine Frage nach der anderen und führen den Text selbst zusammen; in Cowork beschreiben Sie das Ergebnis, Cowork plant und handelt in Outlook, Teams, Word, Excel und PowerPoint, und Sie prüfen die Dokumente und die gesendeten Nachrichten.](../../demos/08-cowork/pptx/images/01-01-cowork-and-chat.svg)
+![Zwei Bahnen: In Copilot Chat stellen Sie eine Frage nach der anderen und führen den Text selbst zusammen; in Cowork beschreiben Sie das Ergebnis, Cowork plant und handelt in Outlook, Teams, Word, Excel und PowerPoint, und Sie prüfen die Dokumente und die gesendeten Nachrichten.](../../demos/07-cowork/pptx/images/01-01-cowork-and-chat.svg)
 
 Der größte Vorteil dieses Modells ist Produktivität, die in der Praxis skaliert. Cowork erledigt mehrstufige Workflows über mehrere Apps hinweg, die sonst Kontextwechsel, manuelles Copy/Paste und wiederholte Abstimmung erfordern. Gleichzeitig behalten Menschen die Kontrolle, weil sensible Aktionen eine Freigabe brauchen. User können mehr operative Arbeit delegieren, ohne Übersicht, Governance oder Vertrauen zu verlieren.
 
@@ -42,7 +42,7 @@ Auf Ebene der Organisation hilft Cowork Teams, Intent innerhalb der sicheren Gre
 
 In dieser Übung konfigurieren Sie die zentralen Voraussetzungen im Tenant, damit Sie Cowork sicher aktivieren.
 
-![Ein Pilot User mit Copilot Lizenz erreicht Cowork über eine Spending Policy unter Copilot > Cost management, die Cowork auswählt; Anthropic Models, Frontier, die Discovery Einstellung und Agents > All agents haben jeweils eine eigene Aufgabe.](../../demos/08-cowork/pptx/images/01-02-cowork-access.svg)
+![Ein Pilot User mit Copilot Lizenz erreicht Cowork über eine Spending Policy unter Copilot > Cost management, die Cowork auswählt; Anthropic Models, Frontier, die Discovery Einstellung und Agents > All agents haben jeweils eine eigene Aufgabe.](../../demos/07-cowork/pptx/images/01-02-cowork-access.svg)
 
 ### Schritt 1: Voraussetzungen prüfen
 
@@ -87,7 +87,7 @@ Können User nicht auf Cowork zugreifen, prüfen Sie, ob sie im Geltungsbereich 
 
 In dieser Übung arbeiten Sie zum ersten Mal mit Cowork im Produkt, beobachten das Ausführungsmodell in Aktion und prüfen die Freigabekontrollen für sensible Aktionen.
 
-![Die fünf Schritte einer Interaktion mit Cowork: Aufgabe beschreiben, Cowork bei der Arbeit zusehen, jederzeit mit weiteren Nachrichten steuern, vor sensiblen Aktionen wie dem Senden einer E-Mail oder einem Post in Teams freigeben und die Ergebnisse prüfen.](../../demos/08-cowork/pptx/images/01-03-interaction-loop.svg)
+![Die fünf Schritte einer Interaktion mit Cowork: Aufgabe beschreiben, Cowork bei der Arbeit zusehen, jederzeit mit weiteren Nachrichten steuern, vor sensiblen Aktionen wie dem Senden einer E-Mail oder einem Post in Teams freigeben und die Ergebnisse prüfen.](../../demos/07-cowork/pptx/images/01-03-interaction-loop.svg)
 
 ### Schritt 1: Cowork öffnen
 

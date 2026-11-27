@@ -6,7 +6,7 @@ In diesem Lab lernen Sie, wie Sie Custom Agent Skills für Copilot Cowork bauen,
 
 Im Kern ist ein Agent Skill eine strukturierte Instruction-Datei, die Cowork beibringt, wann und wie es einen bestimmten fachlichen Workflow ausführt. Skills sind keine generischen Prompts. Ein Skill enthält Intent-Signale, Hinweise zur Ausführung und Erwartungen an das Ergebnis, damit Cowork für eine Anfrage zuverlässig das richtige Verhalten auswählt und ausführt.
 
-![Kommentierte SKILL.md für weekly-report: Der Name entspricht dem Ordnernamen, die Description liest Cowork, um zu entscheiden, wann der Skill greift, und die Instructions sind das Rezept, dem Cowork folgt.](../../demos/08-cowork/pptx/images/03-02-skill-anatomy.svg)
+![Kommentierte SKILL.md für weekly-report: Der Name entspricht dem Ordnernamen, die Description liest Cowork, um zu entscheiden, wann der Skill greift, und die Instructions sind das Rezept, dem Cowork folgt.](../../demos/07-cowork/pptx/images/03-02-skill-anatomy.svg)
 
 Am Ende dieses Labs können Sie:
 
@@ -23,7 +23,7 @@ In dieser Übung bauen Sie ein klares mentales Modell von Skills auf: wo sie in 
 
 Cowork nutzt Skills als wiederverwendbare Ausführungsmuster. Während eines Tasks kann Cowork je nach Intent der Unterhaltung einen oder mehrere Skills laden und dann einen Workflow Schritt für Schritt ausführen.
 
-![Diagramm: Cowork zerlegt eine Anfrage in einen Plan. Schritt 1, der Excel Skill, baut die Tabelle, und Schritt 2, der Email Skill, sendet sie, während die passenden Chips Excel und Email im Abschnitt Skills des Side Panels aufleuchten.](../../demos/08-cowork/pptx/images/02-01-side-panel.svg)
+![Diagramm: Cowork zerlegt eine Anfrage in einen Plan. Schritt 1, der Excel Skill, baut die Tabelle, und Schritt 2, der Email Skill, sendet sie, während die passenden Chips Excel und Email im Abschnitt Skills des Side Panels aufleuchten.](../../demos/07-cowork/pptx/images/02-01-side-panel.svg)
 
 In der Praxis sorgen Skills dafür, dass Cowork:
 
@@ -52,7 +52,7 @@ Behalten Sie diese Unterscheidung im Kopf:
 
 Wählen Sie einen Skill-first Ansatz, wenn Ihr Hauptziel die geführte Ausführung von Tasks ist. Fügen Sie Plugins und Connectors hinzu, wenn der Workflow auch externe Systeme braucht.
 
-![Gegenüberstellung eines Custom Skills, einer einzigen SKILL.md mit Instructions, die Sie für Ihre eigene wiederkehrende Arbeit schreiben, und eines Plugins, eines Packages aus Skills, Connectors oder beidem, das Daten oder Expertise mitbringt, die Sie nicht selbst schreiben können.](../../demos/08-cowork/03-custom-skills/_images/skill-vs-plugin.svg)
+![Gegenüberstellung eines Custom Skills, einer einzigen SKILL.md mit Instructions, die Sie für Ihre eigene wiederkehrende Arbeit schreiben, und eines Plugins, eines Packages aus Skills, Connectors oder beidem, das Daten oder Expertise mitbringt, die Sie nicht selbst schreiben können.](../../demos/07-cowork/03-custom-skills/_images/skill-vs-plugin.svg)
 
 ## Übung 2: Skills auf der Seite Plugins verwalten
 
@@ -118,7 +118,7 @@ Test it with the following URL: https://learn.microsoft.com/en-us/microsoft-copi
 
 Lesen Sie den **Skill Report**, den Cowork bei jedem Erstellen oder Aktualisieren Ihres Skills zurückgibt. Der Score reicht von 0 bis 100 über **Trigger clarity**, **Instruction specificity**, **Scope boundaries** und **Robustness**, jede Dimension mit 25 Punkten. Die Stufen sind **Excellent** (85+), **Good** (70-84), **Needs work** (50-69) und **Poor** (unter 50). Beheben Sie zuerst die Dimension mit dem niedrigsten Score und testen Sie dann erneut in einer neuen Unterhaltung.
 
-![Diagramm des Skill Report Scores: Vier Dimensionen mit je 25 Punkten ergeben zusammen einen Score von 0 bis 100, der in die Stufen Poor, Needs work, Good oder Excellent fällt.](../../demos/08-cowork/03-custom-skills/_images/skill-report-score.svg)
+![Diagramm des Skill Report Scores: Vier Dimensionen mit je 25 Punkten ergeben zusammen einen Score von 0 bis 100, der in die Stufen Poor, Needs work, Good oder Excellent fällt.](../../demos/07-cowork/03-custom-skills/_images/skill-report-score.svg)
 
 ### Schritt 2: Speichern und prüfen, wo der Skill liegt
 
@@ -130,7 +130,7 @@ Wenn Sie mit Ihrem Skill zufrieden sind, schließen Sie die aktuelle Session. Co
 
 Durchsuchen Sie Ihr OneDrive for Business und prüfen Sie den Inhalt des neuen Skill-Ordners. Ein Skill, den Sie Cowork im Chat bauen lassen oder selbst schreiben, landet im selben Ordner.
 
-![Diagramm: Der geführte Ablauf, die Bitte im Chat und eine selbst geschriebene SKILL.md enden alle in Documents/Cowork/skills/, wo der nächste neue Task die Skills bei seinem Start entdeckt, während ein bereits offener Task sie nicht listet.](../../demos/08-cowork/pptx/images/03-01-create-a-skill.svg)
+![Diagramm: Der geführte Ablauf, die Bitte im Chat und eine selbst geschriebene SKILL.md enden alle in Documents/Cowork/skills/, wo der nächste neue Task die Skills bei seinem Start entdeckt, während ein bereits offener Task sie nicht listet.](../../demos/07-cowork/pptx/images/03-01-create-a-skill.svg)
 
 ![Der Ordner in OneDrive for Business unter Documents/Cowork/Skills mit der Definitionsdatei SKILL.md.](_images/cowork-custom-skill-03.png)
 

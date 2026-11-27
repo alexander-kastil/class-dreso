@@ -16,8 +16,9 @@ Tenant requirements and one-time admin setup for the class: Copilot Credits, spe
 | 8 | [Copilot Credits for Microsoft Copilot harness agents and Work IQ](08-tenant-credit-setup.md) | Power Platform billing plans for the agent environment, the Microsoft 365 spending policy, the Work IQ service principal and cost guardrails |
 | 9 | [Apps in Copilot Studio](09-copilot-studio-apps-setup.md) | The `No usage quota is available for your account` error, billing the maker's personal developer environment, and runtime coverage through Copilot Managed Runtime |
 | 10 | [Configure Copilot Credits for the Work IQ API](10-work-iq-credit-quota.md) | The `exhausted the AI credit quota for WorkIQ` error and how to raise the spending policy limit |
-| 11 | [AI Teammates: Autopilot and agent accounts](11-ai-teammates-setup.md) | Module 8 readiness: Frontier and Agent 365 licensing from the cheapest option up, the 30-day Agent 365 trial and how to avoid it converting to paid, and the activation order |
-| 12 | [Copilot Studio plugins for coding agents](../demos/06-cs-maintaining/05-agentic-building/readme.md#install) | The two Microsoft plugins for Claude Code, GitHub Copilot CLI and VS Code: `copilot-studio` for Standard agents and `mcs-assistant` for Microsoft Copilot harness agents, their two marketplaces, the Power Platform CLI prerequisite and switching plugins per module |
+| 11 | [Copilot Studio plugins for coding agents](../demos/06-cs-maintaining/05-agentic-building/readme.md#install) | The two Microsoft plugins for Claude Code, GitHub Copilot CLI and VS Code: `copilot-studio` for Standard agents and `mcs-assistant` for Microsoft Copilot harness agents, their two marketplaces, the Power Platform CLI prerequisite and switching plugins per module |
+| 12 | [Permissions beyond SharePoint site membership](permissions.md) | The labs that need more than membership of the class SharePoint site, what each one needs and which admin role grants it |
+| 13 | [Hosted apps for the REST API and MCP labs](connectors.md) | The two hosted apps the REST API tool and the MCP tool call, their addresses and what the agent uses from them |
 
 ## Booking terms: monthly or annual
 
@@ -30,10 +31,7 @@ Everything the class needs can be booked month by month except the pre-purchase 
 | Copilot Credit pre-purchase plan (P3) | No | One-year term only, auto-renews by default | Cowork, agents, Work IQ, apps |
 | Microsoft 365 Copilot Business (per user) | Yes, monthly term since March 2026, about 20% more | Cheapest when paid yearly; paid monthly about 5% more | Cowork |
 | Microsoft 365 Copilot (enterprise, per user) | No monthly term | Annual only | Cowork |
-| Microsoft 365 Business Premium (per user) | Yes, cancel at any time | Yes, at a discount | AI Teammates |
-| Agent 365 add-on (per user) | Yes, about $18 per month | About $15 per month | AI Teammates |
-| Agent 365 trial | 30 days free; converts to paid unless recurring billing is turned off | Not applicable | AI Teammates |
-| Microsoft 365 E5, Power Apps Premium (per user) | Usually yes, at about 20% more | Yes | AI Teammates, apps |
+| Microsoft 365 E5, Power Apps Premium (per user) | Usually yes, at about 20% more | Yes | Apps |
 
 Prices are US list prices from partner sources; check the euro price and the term on the checkout page before buying. With a Microsoft Customer Agreement billing account, a prorated refund is only possible within seven days of the start or renewal of a subscription; after that, turn off **recurring billing** so the subscription ends at the end of its term.
 

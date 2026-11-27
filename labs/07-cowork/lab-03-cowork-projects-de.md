@@ -6,7 +6,7 @@ In diesem Lab führen Sie eine Arbeit, die sich über mehrere Cowork Tasks erstr
 
 Das Lab steht für sich: Sie brauchen ein Konto mit Cowork und die zwei Dateien im Ordner [lab-03-cowork-projects](lab-03-cowork-projects), nichts aus den anderen Labs.
 
-![Ein Project Q3 Close enthält seine Instructions, die Tasks unter Recent, die Dateien unter Outputs und den Project context; ein neuer Task, der auf der Seite des Projects startet, übernimmt die Instructions und den verfügbaren Kontext, und seine Datei landet unter Outputs.](../../demos/08-cowork/pptx/images/04-01-what-a-project-holds.svg)
+![Ein Project Q3 Close enthält seine Instructions, die Tasks unter Recent, die Dateien unter Outputs und den Project context; ein neuer Task, der auf der Seite des Projects startet, übernimmt die Instructions und den verfügbaren Kontext, und seine Datei landet unter Outputs.](../../demos/07-cowork/pptx/images/04-01-what-a-project-holds.svg)
 
 Am Ende dieses Labs können Sie:
 
@@ -167,6 +167,6 @@ Read vienna-hub-launch-plan.xlsx and write the weekly launch status brief as a W
 
 Sie haben einen Launch, der sich über mehrere Tasks erstreckt, als ein Cowork Project geführt. Die Instructions des Projects haben Publikum, Begriffe und Format einmal festgelegt, und jeder Task, der auf der Seite des Projects begann, ist ihnen gefolgt, während dieselbe Anfrage außerhalb des Projects es nicht tat. **Outputs** hat die Dateien jedes Tasks gesammelt, ein Chat von außen ist dem Project beigetreten und wieder gegangen, ohne seine Unterhaltung zu verlieren, und das Archivieren hat die fertige Arbeit aus dem Weg geräumt, ohne sie zu löschen.
 
-Mehr dazu in [Organizing Work with Projects](../../demos/08-cowork/04-projects/readme.md) und in [Projects in Copilot Cowork verwenden](https://learn.microsoft.com/de-de/copilot/cowork/cowork-projects).
+Mehr dazu in [Organizing Work with Projects](../../demos/07-cowork/04-projects/readme.md) und in [Projects in Copilot Cowork verwenden](https://learn.microsoft.com/de-de/copilot/cowork/cowork-projects).
 
 Weiter mit [Lab 04: Ihr erstes Cowork Plugin bauen](lab-04-cowork-plugins-de.md).

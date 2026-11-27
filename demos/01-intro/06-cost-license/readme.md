@@ -77,7 +77,7 @@ Most setup problems in this class surface as one of a handful of messages. Each 
 | A Microsoft Copilot harness agent won't build or preview | The environment shows Pay-as-you-go **No** and has no allocation | Link the environment to a billing plan: [Copilot Credits for Microsoft Copilot harness agents and Work IQ](../../../setup/08-tenant-credit-setup.md) |
 | An agent stops in the middle of a session | Its per-agent limit with **Stop usage** is lower than one build or preview session | Raise the limit in **Licensing** > **Copilot Studio** > **Manage Agents** |
 | Cowork doesn't appear next to Chat | The user isn't in a spending policy that selects Cowork, the policy is at its limit, or the Copilot license is missing | Check the policy and the license: [Copilot Cowork access and billing](../../../setup/07-cowork-tenant-setup.md) |
-| No **Agent account** button in Copilot Studio | The tenant has no Agent 365 enrollment and no Frontier for AI Teammates licenses | Follow the cheapest-first order in [AI Teammates: Autopilot and agent accounts](../../../setup/11-ai-teammates-setup.md) |
+| No **Agent account** button in Copilot Studio | The tenant has no Agent 365 enrollment and no Frontier for AI Teammates licenses | Follow the cheapest-first order in AI Teammates: Autopilot and agent accounts |
 
 ---
 
@@ -136,9 +136,9 @@ Prices are US list prices from partner sources, so check the euro price and the 
 
 ## Readiness for the AI Teammates Module
 
-The optional [AI Teammates](../../07-autopilot/readme.md) module is the one the class tenant can't run live yet, and money for credits isn't the reason. Agents with an account bill like any Microsoft Copilot harness agent, but creating one needs Agent 365, a **Microsoft 365 Frontier for AI Teammates** license per agent, and a maker license, and the admin center reports that the Frontier early access to Agent 365 has ended. Autopilot is a private preview by invitation, with an Intune policy and a GitHub Copilot Business or Enterprise seat on top.
+The optional AI Teammates module is the one the class tenant can't run live yet, and money for credits isn't the reason. Agents with an account bill like any Microsoft Copilot harness agent, but creating one needs Agent 365, a **Microsoft 365 Frontier for AI Teammates** license per agent, and a maker license, and the admin center reports that the Frontier early access to Agent 365 has ended. Autopilot is a private preview by invitation, with an Intune policy and a GitHub Copilot Business or Enterprise seat on top.
 
-Only the person who builds the agents needs a paid license, so test the cheapest path first and stop at the first one that brings back the **Agent account** button: the free 30-day Agent 365 trial (turn recurring billing off right after you start it), then one Business Premium seat with the Agent 365 add-on, then the documented Microsoft 365 E5 with Agent 365. [AI Teammates: Autopilot and agent accounts](../../../setup/11-ai-teammates-setup.md) has the prices, the trial trap and the activation order.
+Only the person who builds the agents needs a paid license, so test the cheapest path first and stop at the first one that brings back the **Agent account** button: the free 30-day Agent 365 trial (turn recurring billing off right after you start it), then one Business Premium seat with the Agent 365 add-on, then the documented Microsoft 365 E5 with Agent 365. AI Teammates: Autopilot and agent accounts has the prices, the trial trap and the activation order.
 
 ---
 
@@ -152,7 +152,7 @@ The setup guides hold the clicks; the matching skills run the same checks read-o
 | [Copilot Credits for Microsoft Copilot harness agents and Work IQ](../../../setup/08-tenant-credit-setup.md) | `copilot-credits` | Billing plans for the agent environment, the Work IQ service principal and cost guardrails |
 | [Configure Copilot Credits for the Work IQ API](../../../setup/10-work-iq-credit-quota.md) | `copilot-credits` | The Work IQ quota error and raising the spending policy limit |
 | [Apps in Copilot Studio](../../../setup/09-copilot-studio-apps-setup.md) | `copilot-credits` | The personal developer environment and runtime coverage through Copilot Managed Runtime |
-| [AI Teammates: Autopilot and agent accounts](../../../setup/11-ai-teammates-setup.md) | | Frontier and Agent 365 licensing from the cheapest option up |
+| AI Teammates: Autopilot and agent accounts | | Frontier and Agent 365 licensing from the cheapest option up |
 | [Copilot Studio plugins for coding agents](../../06-cs-maintaining/05-agentic-building/readme.md#install) | | The two Microsoft plugins for Claude Code, GitHub Copilot CLI and VS Code, and the Power Platform CLI they need |
 
 The PowerShell [scripts](../../../setup/scripts/readme.md) create class users with their licenses and environments, assign admin roles, report a student's permissions, and install the workstation prerequisites.
@@ -162,7 +162,7 @@ The PowerShell [scripts](../../../setup/scripts/readme.md) create class users wi
 ## Where to Go Next
 
 1. [Where to Build and What It Costs](../04-where-to-build/readme.md): the three billing routes and spending limits in general
-2. [Microsoft 365 Copilot Cowork](../../08-cowork/readme.md): the first module that bills Copilot Credits
+2. [Microsoft 365 Copilot Cowork](../../07-cowork/readme.md): the first module that bills Copilot Credits
 
 ---
 

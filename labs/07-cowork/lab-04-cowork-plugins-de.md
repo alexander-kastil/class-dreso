@@ -58,7 +58,7 @@ Behalten Sie diese Unterscheidung im Kopf:
 - **User** fügen erlaubte Plugins aus **Discover** hinzu, schalten sie pro Unterhaltung in **Sources & Skills** ein oder aus und können von Admins deployte Plugins nicht entfernen
 - **Admins** steuern Verfügbarkeit, Deployment Scope und Governance aus dem Microsoft 365 Admin Center
 
-![Fünf Quellen speisen das Side Panel von Cowork: integrierte Skills, Custom Skills aus Customize oder OneDrive, Plugins aus Discover, von Admins deployte Plugins und Skills, die geteilt oder hochgeladen wurden.](../../demos/08-cowork/pptx/images/06-02-where-plugins-fit.svg)
+![Fünf Quellen speisen das Side Panel von Cowork: integrierte Skills, Custom Skills aus Customize oder OneDrive, Plugins aus Discover, von Admins deployte Plugins und Skills, die geteilt oder hochgeladen wurden.](../../demos/07-cowork/pptx/images/06-02-where-plugins-fit.svg)
 
 Verlangt ein Plugin Authentication für einen Connector, durchläuft trotzdem jeder User einmalig seinen eigenen Sign-in und Consent Flow.
 
@@ -249,7 +249,7 @@ In jeder `SKILL.md`:
 - Definieren Sie einen klaren Workflow und ein klares Ausgabeformat
 - Verweisen Sie explizit auf Tools, wenn ein Connector nötig ist
 
-![Aufbau einer SKILL.md: Der YAML Header enthält den Namen, der exakt dem Ordner entspricht, und die Description, die Cowork liest, um zu entscheiden, wann der Skill greift. Darunter sind die Instructions das Rezept Schritt für Schritt, dem Cowork folgt.](../../demos/08-cowork/pptx/images/03-02-skill-anatomy.svg)
+![Aufbau einer SKILL.md: Der YAML Header enthält den Namen, der exakt dem Ordner entspricht, und die Description, die Cowork liest, um zu entscheiden, wann der Skill greift. Darunter sind die Instructions das Rezept Schritt für Schritt, dem Cowork folgt.](../../demos/07-cowork/pptx/images/03-02-skill-anatomy.svg)
 
 Den Inhalt der drei Skills können Sie von den folgenden URLs kopieren:
 
@@ -442,7 +442,7 @@ Bevor Sie einen Admin einbeziehen, testen Sie das Package selbst. Öffnen Sie **
 
 Auch das Teilen mit **Specific users in your organization** braucht keinen Admin, die Veröffentlichung für die gesamte Organisation wartet dagegen auf die Freigabe durch einen Admin. Erst der Admin-Upload in Schritt 1 listet das Plugin in **Discover**, und Custom Plugins laufen in Cowork nicht auf Mobilgeräten.
 
-![Vier Stufen wachsender Reichweite für ein hochgeladenes Plugin: Only you und Specific users in your organization brauchen keinen Admin, die gesamte Organisation wartet auf die Freigabe durch einen Admin, und ein öffentlicher Eintrag im Store läuft über Partner Center.](../../demos/08-cowork/pptx/images/06-03-sharing-a-plugin.svg)
+![Vier Stufen wachsender Reichweite für ein hochgeladenes Plugin: Only you und Specific users in your organization brauchen keinen Admin, die gesamte Organisation wartet auf die Freigabe durch einen Admin, und ein öffentlicher Eintrag im Store läuft über Partner Center.](../../demos/07-cowork/pptx/images/06-03-sharing-a-plugin.svg)
 
 ### Schritt 1: Das Plugin im Microsoft 365 Admin Center hochladen
 

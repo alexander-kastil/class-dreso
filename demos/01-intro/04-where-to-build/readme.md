@@ -11,7 +11,7 @@ The paths trade ease of building against control. Start with the lowest-effort p
 | Path | Build effort | Best when | In this course |
 |---|---|---|---|
 | Agent Builder and SharePoint agents | No code | A grounded Q&A assistant over your sites and files | [Copilot Chat & Productivity Agents](../05-chat-productivity/readme.md) |
-| Cowork skills and plugins | No code | A knowledge worker hands off recurring work in Microsoft 365 | [Microsoft 365 Copilot Cowork](../../08-cowork/readme.md) |
+| Cowork skills and plugins | No code | A knowledge worker hands off recurring work in Microsoft 365 | [Microsoft 365 Copilot Cowork](../../07-cowork/readme.md) |
 | Copilot Studio | Low code | A process agent with tools, triggers, channels, and governance | Most of the course, from [Copilot Studio Basics](../../02-cs-basics/readme.md) on |
 | Pro-code (Microsoft 365 Agents Toolkit, Agents SDK, Microsoft Foundry) | Code | Your own orchestrator, models, or hosting | Out of scope |
 
@@ -45,7 +45,7 @@ Set the guardrails at activation, before the first bill arrives. A spending poli
 
 ![Each user's consumption stops at the per-user limit, while all usage adds up toward the tenant's monthly spending limit. Alert thresholds below that ceiling notify you before it is reached.](../pptx/images/03-03-spending-governance.svg)
 
-The Cowork tenant setup, step by step, is in [Setting Up Cowork in Your Tenant](../../08-cowork/01-intro/readme.md#setting-up-cowork-in-your-tenant).
+The Cowork tenant setup, step by step, is in [Setting Up Cowork in Your Tenant](../../07-cowork/01-intro/readme.md#setting-up-cowork-in-your-tenant).
 
 ### What the Model Costs in Cowork
 
